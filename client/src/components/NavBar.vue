@@ -1,20 +1,26 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
+import LoginBadge from './LoginBadge.vue';
 
-    const isMenuActive = false;
+    const isMenuActive = ref(false);
+
+    function toggleMenu() {
+        isMenuActive.value = !isMenuActive.value;
+        console.log({ isMenuActive });
+    }
 </script>
 
 <template>
-    <nav class="navbar is-dark">
+    <nav class="navbar is-primary">
         <div class="container">
         <div class="navbar-brand">
           <a class="navbar-item" href="https://bulma.io">
             
             <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="22" height="22" />
             
-            
           </a>
-          <div class="navbar-burger" :class="{ 'is-active': isMenuActive }" @click="isMenuActive = !isMenuActive" >
+          <div class="navbar-burger" :class="{ 'is-active': isMenuActive }" @click="toggleMenu" >
             <span></span>
             <span></span>
             <span></span>
@@ -24,18 +30,9 @@ import { RouterLink } from 'vue-router';
         <div class="navbar-menu" :class="{ 'is-active': isMenuActive }">
           <div class="navbar-start">
 
-            <RouterLink to="/"  icon="fa-solid fa-house" class="navbar-item">
-                <span class="icon">
-                    <i class="fa-solid fa-house"></i>
-                </span>
-                <span>Home</span>
-            </RouterLink>
-            <RouterLink to="/about" class="navbar-item">
-                <span class="icon">
-                    <i class="fa-solid fa-dumbbell"></i>
-                </span>
-                <span>Weight Training</span>
-            </RouterLink>
+            <RouterLink to="/" class="navbar-item">Home</RouterLink>
+            <RouterLink to="/about" class="navbar-item">About</RouterLink>
+            <RouterLink to="/products" class="navbar-item">Products</RouterLink>
 
 
             <div class="navbar-item has-dropdown is-hoverable">
@@ -70,6 +67,9 @@ import { RouterLink } from 'vue-router';
           </div>
       
           <div class="navbar-end">
+
+            <LoginBadge />
+
             <div class="navbar-item">
               <div class="field is-grouped">
                 <p class="control">
@@ -78,12 +78,12 @@ import { RouterLink } from 'vue-router';
                       <i class="fab fa-twitter"></i>
                     </span>
                     <span>
-                      Log In
+                      Tweet
                     </span>
                   </a>
                 </p>
                 <p class="control">
-                  <a class="button is-info" href="https://github.com/jgthms/bulma/releases/download/0.9.3/bulma-0.9.3.zip">
+                  <a class="button is-primary" href="https://github.com/jgthms/bulma/releases/download/0.9.3/bulma-0.9.3.zip">
                     <span class="icon">
                       <i class="fas fa-download"></i>
                     </span>
