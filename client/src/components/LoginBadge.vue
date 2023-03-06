@@ -19,7 +19,7 @@ const session = useSession();
                     </span>
                     <strong>Login</strong>
                 </a>
-                <a class="button is-info">
+                <a class="button is-info" id="signup-btn">
                     <span class="icon">
                         <i class="fas fa-user-plus"></i>
                     </span>
@@ -32,5 +32,8 @@ const session = useSession();
 </template>
 
 <style scoped>
-
+#signup-btn{
+   margin-left: 10px;
+   margin-right: -10px;
+}
 </style>
