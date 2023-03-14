@@ -86,4 +86,9 @@ import LoginBadge from './LoginBadge.vue';
 #home-icon, #journal-icon, #workouts-icon, #statistics-icon{
   margin: 2.5px;
 }
+.router-link-active {
+  border-bottom: #2889f7d5 5px solid;
+}
+  
+
 </style>
