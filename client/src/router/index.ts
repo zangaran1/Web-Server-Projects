@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import WorkoutsView from '../views/WorkoutsView.vue'
 import JournalView from '../views/JournalView.vue'
 import StatsView from '../views/StatsView.vue'
+import AdminView from '../views/AdminView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,8 +27,13 @@ const router = createRouter({
       path: '/journal',
       name: 'journal',
       component: JournalView
-    }
+    },
+    {
+      path: '/admin',
+      name: 'admin',
+      component: AdminView
 
+    }
   ]
 })
 

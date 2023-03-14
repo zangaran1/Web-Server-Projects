@@ -54,6 +54,12 @@ import LoginBadge from './LoginBadge.vue';
               </span>
               Statistics
             </RouterLink>
+            <RouterLink to="/admin" class="navbar-item">
+              <span class="icon" id="admin-icon">
+                <i class="fa-solid fa-lock"></i>
+              </span>
+              Admin
+            </RouterLink>
  
           </div>
           </div>
@@ -83,7 +89,7 @@ import LoginBadge from './LoginBadge.vue';
 
 
 <style scoped>
-#home-icon, #journal-icon, #workouts-icon, #statistics-icon{
+#home-icon, #journal-icon, #workouts-icon, #statistics-icon, #admin-icon{
   margin: 2.5px;
 }
 .router-link-active {
