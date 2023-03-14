@@ -10,21 +10,22 @@ const session = useSession();
 <template>
             <div class="navbar-item" v-if="session.user">
                 Welcome, {{ session.user.name }}
-                (<a @click=" session.user = null">logout</a>)
+                (<a id="logout-txt" @click=" session.user = null">Logout</a>)
             </div>
             <div class="navbar-item" v-else>
-                <a class="button is-dark" @click="login">
-                    <span class="icon">
-                        <i class="fas fa-user"></i>
-                    </span>
-                    <strong>Login</strong>
-                </a>
-                <a class="button is-info" id="signup-btn">
+                <a class="button is-dark" id="signup-btn">
                     <span class="icon">
                         <i class="fas fa-user-plus"></i>
                     </span>
                     <strong>Sign up</strong>
                 </a>
+                <a class="button is-info" @click="login">
+                    <span class="icon">
+                        <i class="fas fa-user"></i>
+                    </span>
+                    <strong>Login</strong>
+                </a>
+                
             </div>
 
 
@@ -34,6 +35,13 @@ const session = useSession();
 <style scoped>
 #signup-btn{
    margin-left: 10px;
-   margin-right: -10px;
+   margin-right: 10px;
+}
+#logout-txt{
+    color: teal;
+    padding: 5px;
+}
+#logout-txt:hover{
+    text-decoration: underline;
 }
 </style>

@@ -30,9 +30,30 @@ import LoginBadge from './LoginBadge.vue';
         <div class="navbar-menu" :class="{ 'is-active': isMenuActive }">
           <div class="navbar-start">
 
-            <RouterLink to="/" class="navbar-item">Home</RouterLink>
-            <RouterLink to="/about" class="navbar-item">About</RouterLink>
-            <RouterLink to="/products" class="navbar-item">Products</RouterLink>
+            <RouterLink to="/" class="navbar-item">
+              <span class="icon" id="home-icon">
+                <i class="fa-solid fa-house"></i>
+              </span>
+              Home
+            </RouterLink>
+            <RouterLink to="/workouts" class="navbar-item">
+              <span class="icon" id="workouts-icon">
+                <i class="fa-solid fa-dumbbell"></i>
+              </span>
+              My Workouts
+            </RouterLink>
+            <RouterLink to="/journal" class="navbar-item">
+              <span class="icon" id="journal-icon">
+                <i class="fa-solid fa-book"></i>
+              </span>
+              Journal
+            </RouterLink>
+            <RouterLink to="/statistics" class="navbar-item">
+              <span class="icon" id="statistics-icon">
+                <i class="fa-solid fa-chart-line"></i>
+              </span>
+              Statistics
+            </RouterLink>
  
           </div>
           </div>
@@ -62,5 +83,7 @@ import LoginBadge from './LoginBadge.vue';
 
 
 <style scoped>
-
+#home-icon, #journal-icon, #workouts-icon, #statistics-icon{
+  margin: 2.5px;
+}
 </style>
