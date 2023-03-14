@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import { useSession, login } from '@/model/session';
+import SideBar from '../components/SideBar.vue';
+import NavBar from '@/components/NavBar.vue';
+import MainSection from '../components/MainSection.vue';
+
 
 const session = useSession();
 </script>
@@ -7,51 +11,19 @@ const session = useSession();
 <template>
     <div class="section">
         <div class="columns">
-        <div class="column is-one-quarter" id="first-card">
-            <div class="card">
-                <header class="card-header">
-                <p class="card-header-title" id="card-title">
-                    User Section 
-                </p>
-            </header>
-            <div class="card-content">
-                <div class="content">
-                    <aside class="menu">
-                        <div class="menu-list">
-                            <a>User Profile</a>
-                            <a>Friends</a>
-                            <a>Settings</a>
-                            <a>Messages</a>
-                            <a>Refer A Friend</a>
-                            <a></a>
-                        </div>
-                    </aside>
-                </div>
+            <div class="column is-one-quarter" id="first-card">
+                <SideBar />
+            </div>
+            
+            <div class="column is-two-thirds" id="middle-card">
+                <MainSection />
             </div>
         </div>
-            
-        </div>
-        <div class="column is-half" id="middle-card">
-            <header class="card-header">
-                <p class="card-header-title">
-                    Component
-                </p>
-            </header>
-        </div>
-        <div class="column is-one-quarter" id="third-card">
-            <header class="card-header">
-                <p class="card-header-title">
-                    Component
-                </p>
-            </header>
-        </div>
     </div>
-</div>
-    
 </template>
 
 <style scoped>
-#middle-card, #first-card, #third-card{
+#middle-card, #first-card{
     margin-top: 10px;
 }
 .columns{
@@ -62,4 +34,8 @@ const session = useSession();
     background-color: teal;
     justify-content: center;
 }
+#menu-content{
+    
+}
+
 </style>
