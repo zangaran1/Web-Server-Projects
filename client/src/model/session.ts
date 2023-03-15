@@ -21,6 +21,6 @@ export function useSession() {
 
 export function login() {
     session.user = {
-        name: "John Doe",
+        name: "Nicholas Zangara",
     }
 }
