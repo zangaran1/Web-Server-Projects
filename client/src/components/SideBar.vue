@@ -9,7 +9,7 @@ const session = useSession();
 </script>
 
 <template>
-    <div class="card">
+    <div class="card" id="card">
         <header class="card-header">
         <p class="card-header-title" id="card-title">
             User Section 
@@ -34,7 +34,16 @@ const session = useSession();
 
 <style scoped>
 #card-title{
-    background-color: teal;
+    background-color: hsl(348, 100%, 61%);
     justify-content: center;
+}
+#card{
+    background-color: rgb(56, 55, 55);
+}
+#menu-content a{
+    color: white;
+}
+#menu-content a:hover{
+    background-color:rgb(78, 78, 78) ;
 }
 </style>

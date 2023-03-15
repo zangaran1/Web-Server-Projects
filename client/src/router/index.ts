@@ -1,9 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import WorkoutsView from '../views/WorkoutsView.vue'
-import JournalView from '../views/JournalView.vue'
-import StatsView from '../views/StatsView.vue'
-import AdminView from '../views/AdminView.vue'
+import HomeView from '../views/navbarFolder/HomeView.vue'
+import WorkoutsView from '../views/navbarFolder/WorkoutsView.vue'
+import JournalView from '../views/navbarFolder/JournalView.vue'
+import StatsView from '../views/navbarFolder/StatsView.vue'
+import AdminView from '../views/navbarFolder/AdminView.vue'
+import UserProfile from '../views/otherViews/UserProfileView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -33,6 +34,11 @@ const router = createRouter({
       name: 'admin',
       component: AdminView
 
+    },
+    {
+      path: '/user-profile',
+      name: 'userprofile',
+      component: UserProfile
     }
   ]
 })

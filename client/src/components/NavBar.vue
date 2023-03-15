@@ -12,7 +12,7 @@ import LoginBadge from './LoginBadge.vue';
 </script>
 
 <template>
-    <nav class="navbar is-dark">
+    <nav class="navbar is-danger">
         <div class="container">
         <div class="navbar-brand">
           <a class="navbar-item" href="https://bulma.io">
@@ -96,5 +96,11 @@ import LoginBadge from './LoginBadge.vue';
   border-bottom: #2889f7d5 5px solid;
 }
   
+#navbar-edit{
+  background-color: #ff5100d5;
+}
+#navbar-edit:hover{
+  background-color: #ff5100d5;
+}
 
 </style>
