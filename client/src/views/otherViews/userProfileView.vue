@@ -14,7 +14,7 @@ const session = useSession();
             </p>
         </div>
    </div>
-   <div class="user-top-banner">
+   <div class="user-top-banner" v-if="session.user">
         <div class="follower-count">
             Followers: 10
         </div>
@@ -30,7 +30,7 @@ const session = useSession();
             </div>
         </aside>
    </div>
-   <div class="user-bio-container">
+   <div class="user-bio-container" v-if="session.user">
         <div class="user-bio">
             <p >
                 Hello My name is Nicholas Zangara, and I am a Senior Computer Science Student at SUNY New Paltz. I also play baseball for the school. I am a left handed pitcher, and fitness and athletics is a big part of my life!
