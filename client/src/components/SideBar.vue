@@ -24,7 +24,6 @@ const session = useSession();
                         <a>Settings</a>
                         <a>Messages</a>
                         <a>Refer A Friend</a>
-                        <a></a>
                     </div>
                 </aside>
             </div>
