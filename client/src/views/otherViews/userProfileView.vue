@@ -31,6 +31,10 @@ const session = useSession();
         </aside>
    </div>
    <div class="user-bio-container" v-if="session.user">
+        <div class="user-bio-headline">
+            <h2>Something About Me</h2>
+            <hr>
+        </div>
         <div class="user-bio">
             <p >
                 Hello My name is Nicholas Zangara, and I am a Senior Computer Science Student at SUNY New Paltz. I also play baseball for the school. I am a left handed pitcher, and fitness and athletics is a big part of my life!
@@ -73,13 +77,20 @@ const session = useSession();
     padding: 20px;
 }
 .user-bio-container{
-    padding: 20px;
     display: flex;
-    flex-direction: row;
+    margin-top: 50px;
+    flex-direction: column;
     justify-content: center;
 }
 .user-bio{
     padding: 20px;
     color: white;
+}
+.user-bio-headline h2{
+    color: white;
+    text-align: center;
+}
+.user-bio-headline{
+    justify-content: center;
 }
 </style>

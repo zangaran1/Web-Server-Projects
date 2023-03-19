@@ -3,6 +3,7 @@
     import { RouterLink } from 'vue-router';
     import { useSession, login } from '@/model/session';
     import UserProfileView from '@/views/otherViews/userProfileView.vue';
+    import FriendsListView from '@/views/otherViews/FriendsListView.vue';
 
 
 const session = useSession();
@@ -22,7 +23,7 @@ const session = useSession();
                 <UserProfileView />
             </div>
             <div class="friends-list">
-
+                <FriendsListView />
             </div>
             <div class="messages-content">
 
