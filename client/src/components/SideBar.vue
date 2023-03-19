@@ -37,7 +37,7 @@ const session = useSession();
     justify-content: center;
 }
 #card{
-    background-color: rgb(56, 55, 55);
+    background-color: rgb(44, 44, 44);
 }
 #menu-content a{
     color: white;

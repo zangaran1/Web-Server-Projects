@@ -42,7 +42,7 @@ const session = useSession();
         background-color: hsl(348, 100%, 61%);
     }
     #card{
-    background-color: rgb(56, 55, 55);
+    background-color: rgb(44, 44, 44);
     }
     
 

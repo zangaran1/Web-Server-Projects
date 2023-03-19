@@ -7,7 +7,7 @@ const session = useSession();
 </script>
 
 <template>
-    <div class="user-friends-list-banner">
+    <div class="user-friends-list-banner" v-if="session.user">
         <h2>Friends List</h2>
         <hr>
         <div class="list-of-friends">

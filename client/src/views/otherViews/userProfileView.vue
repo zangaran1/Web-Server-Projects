@@ -65,7 +65,7 @@ const session = useSession();
     flex-direction: row;
     justify-content: center;
     border-radius: 20px;
-    background-color: rgb(51, 49, 49);
+    background-color: hsl(348, 100%, 61%);
 }
 .follower-count, .following-count, .workouts-completed-count{
     font-size: larger;
