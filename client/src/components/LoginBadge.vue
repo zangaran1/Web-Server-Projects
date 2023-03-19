@@ -10,6 +10,7 @@ const session = useSession();
 
 <template>
             <div class="navbar-item" v-if="session.user">
+                Welcome, {{ session.user.name }}
                 <a class="button is-info" id="logout-txt" @click=" session.user = null">Logout</a>
             </div>
             <div class="navbar-item" v-else>
@@ -39,5 +40,8 @@ const session = useSession();
 #signup-btn{
    margin-left: 10px;
    margin-right: 10px;
+}
+#logout-txt{
+    margin-left: 10px;
 }
 </style>

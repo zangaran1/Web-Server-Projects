@@ -27,7 +27,10 @@
                     I agree to the terms and conditions
                 </label>
             </div>
-            <button class="button is-info" id="signup-button">Sign Up</button>
+            <div class="card-bottom">
+                <button class="button is-info" id="signup-button">Sign Up</button>
+            </div>
+            
         </form>
     </div>
 </template>
@@ -74,6 +77,11 @@
 }
 .checkbox{
     color: hsl(348, 100%, 61%);
+}
+.card-bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 </style>
