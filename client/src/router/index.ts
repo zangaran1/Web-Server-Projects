@@ -5,6 +5,7 @@ import JournalView from '../views/navbarFolder/JournalView.vue'
 import StatsView from '../views/navbarFolder/StatsView.vue'
 import AdminView from '../views/navbarFolder/AdminView.vue'
 import UserProfile from '../views/otherViews/UserProfileView.vue'
+import SignUp from '../views/navbarFolder/SignUpView.vue'
 import { useSession } from '@/model/session'
 
 const router = createRouter({
@@ -40,6 +41,11 @@ const router = createRouter({
       path: '/user-profile',
       name: 'userprofile',
       component: UserProfile
+    },
+    {
+      path: '/signup',
+      name: 'signup',
+      component: SignUp
     }
   ]
 })
