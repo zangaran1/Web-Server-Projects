@@ -1,0 +1,46 @@
+{
+    "myworkouts": [
+        {
+            "workoutId": 1,
+            "workoutName": "Push",
+            "excercise": "Bench Press",
+            "sets": 4,
+            "reps": 10,
+            "weight": 225,
+            "caloriesBurned": 560,
+            "duration": 60,
+            "distance": 0,
+            "pace": 0,
+            "description": "Hit a really nice personal record today on the bench! I am super proud of myself!"
+        },
+        {
+            "workoutId": 2,
+            "workoutName": "Pull",
+            "excercise": "Deadlift",
+            "sets": 4,
+            "reps": 2,
+            "weight": 585,
+            "caloriesBurned": 790,
+            "duration": 45,
+            "distance": 0,
+            "pace": 0,
+            "description": "Hit a really nice personal record today on the deadlift! I am super proud of myself!"
+        },
+        {
+            "workoutId": 3,
+            "workoutName": "Legs",
+            "excercise": "Barbell Back Squat",
+            "sets": 4,
+            "reps": 5,
+            "weight": 405,
+            "caloriesBurned": 921,
+            "duration": 53,
+            "distance": 0,
+            "pace": 0,
+            "description": "Hit a really nice personal record today on the Squat Rack! I am super proud of myself!"
+        }
+    ],
+    "total": 10,
+    "skip": 0,
+    "limit": 5
+}
