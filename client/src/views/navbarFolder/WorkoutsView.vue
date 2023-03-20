@@ -30,8 +30,11 @@ const session = useSession();
               
             </div>
             <div class="workout-data-right">
-              <p id="workout-cals">{{ workout.caloriesBurned }} Calories Burned</p>
-              <p id="workout-duration">{{ workout.duration }} Minutes</p>
+              <div class="workout-metrics">
+                <div class="workout-cals">{{ workout.caloriesBurned }} Calories Burned</div>
+                <div class="workout-duration">{{ workout.duration }} Minutes</div>
+              </div>
+              
             </div>
           </div>
           
@@ -91,12 +94,16 @@ box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.628);
 .workout-traits{
   display: flex;
   flex-direction: row;
-  padding: 1rem;
+  padding: 1.5rem;
   margin: 1rem;
 }
-.workout-sets{
-  padding: 1rem;
-  background-color: blue;
+.workout-sets, .workout-reps, .workout-weight{
+  padding: 1.5rem;
+  background-color: rgb(20, 20, 20);
+  margin: .5rem;
+  border-radius: 12px;
+  border: 1px hsl(348, 100%, 61%) solid;
+  text-align: center;
 }
 .workout-data-left, .workout-data-right{
   padding: 2.5rem;
@@ -105,7 +112,27 @@ box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.628);
   padding: 5px;
 }
 .workout-excercises{
-  background-color: black;
+  background-color: rgb(20, 20, 20);
   padding: 1rem;
+  text-align: center;
+  border-radius: 12px;
+  font-size: 2rem;
+  border: 1px hsl(348, 100%, 61%) solid;
+}
+.workout-cals{
+  background:linear-gradient(to right, red, pink);
+  padding: 2rem;
+  margin: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  border-radius: 12px;
+}
+.workout-duration{
+  background-color: rgb(20, 20, 20);
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 12px;
+  border: 1px hsl(348, 100%, 61%) solid;
 }
 </style>
