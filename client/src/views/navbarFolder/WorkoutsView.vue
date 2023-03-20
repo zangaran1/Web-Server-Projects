@@ -5,14 +5,21 @@ import { useSession } from '@/model/session';
 
 const myworkouts = ref( getWorkouts());
 const session = useSession();
-
+const isModalActive = ref(false);
 </script>
 
 <template>
   <div class="section" v-if="session.user">
     <div class="container">
       <div class="start-a-workout-section">
-        <button class="button is-info is-large">Start A New Workout</button>
+        <button class="button is-info is-large" @click="isModalActive = true">Start A New Workout</button>
+      </div>
+      <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <h1>This is your workout</h1>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
       </div>
       <div class="workout-list">
         <div class="workout" v-for="workout in myworkouts" :key="workout.workoutId">
@@ -27,7 +34,16 @@ const session = useSession();
                   <div class="workout-reps">{{ workout.reps }} Reps</div>
                   <div class="workout-weight">{{ workout.weight }} Pounds</div>
                 </div>
-              
+                <div class="workout-share">
+                  <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=https://bulma.io&amp;via=jgthms">
+                    <span class="icon">
+                      <i class="fab fa-twitter"></i>
+                    </span>
+                    <span>
+                      Share this Workout!
+                    </span>
+                  </a>
+                </div>
             </div>
             <div class="workout-data-right">
               <div class="workout-metrics">
@@ -134,5 +150,10 @@ box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.628);
   margin: 1rem;
   border-radius: 12px;
   border: 1px hsl(348, 100%, 61%) solid;
+}
+.workout-share{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 </style>
