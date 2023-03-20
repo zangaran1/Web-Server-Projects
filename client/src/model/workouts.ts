@@ -17,3 +17,7 @@ export interface Workout {
 export function getWorkouts(): Workout[] {
     return data.myworkouts;
 }
+
+export function askWorkout(): {
+    
+}
