@@ -54,7 +54,7 @@ const isModalActive = ref(false);
       <div class="workout-list">
         <div class="workout" v-for="workout in myworkouts" :key="workout.workoutId">
           <div class="workout-name">
-            <b>{{ session.user.name }}'s </b><b> {{ workout.workoutName }} Workout</b>
+            <b>{{ session.user.name }}'s </b><b> {{ workout.workoutName }} Workout</b> <span><b>Data Completed: {{ workout.date }}</b></span>
           </div>
           <div class="data-container">
             <div class="workout-data-left">
@@ -111,7 +111,7 @@ const isModalActive = ref(false);
   padding: 1rem;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  flex-direction: column-reverse;
   width: 65%;
 }
 .workout{
@@ -127,7 +127,15 @@ box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.628);
 }
 .workout-name{
   padding: 1.5rem;
-  background-color: hsl(348, 100%, 61%)
+  background-color: hsl(348, 100%, 61%);
+}
+.workout-name span{
+  text-align: right;
+  margin-left: 12rem;
+  border: 1px hsl(348, 100%, 61%) solid;
+  padding: .5rem;
+  background-color: white;
+  color: hsl(348, 100%, 61%);
 }
 .data-container{
   display: flex;
@@ -193,6 +201,25 @@ box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.628);
   width: 100%;
   border-radius: 5px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.628);
-  padding: 6rem;
+  font-size: 2rem;
+}
+.card-top #line{
+  background-color: hsl(348, 100%, 61%);
+}
+label{
+  color: white;
+  padding: 5px;
+}
+.control input{
+  background-color: rgb(44, 44, 44);
+  color: white;
+  border: 1px white solid;
+  border-radius: 5px;
+  font-size: 1.5rem;
+}
+.card-content{
+  padding: 5rem;
+  text-align: center;
+  margin: 1rem;
 }
 </style>

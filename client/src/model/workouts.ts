@@ -12,12 +12,10 @@ export interface Workout {
     distance: number;
     pace: number;
     description: string;
+    date: string;
 }
 
 export function getWorkouts(): Workout[] {
     return data.myworkouts;
 }
 
-export function askWorkout(): {
-    
-}
