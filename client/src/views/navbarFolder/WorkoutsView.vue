@@ -13,7 +13,9 @@ const isModalActive = ref(false);
     <div class="container">
       <div class="start-a-workout-section">
         <button class="button is-info is-large" @click="isModalActive = true">Start A New Workout</button>
-          <modal v-if="isModalActive" @close="isModalActive = false">
+      </div>
+      <div class="modal-container">
+        <modal v-if="isModalActive" @close="isModalActive = false">
             <div class="card">
               <div class="card-top">
                 <h1>Record Your Workout</h1>
@@ -23,6 +25,26 @@ const isModalActive = ref(false);
                 <label class="label">Excercise Type:</label>
                 <div class="control">
                   <input class="input" type="text" placeholder="Enter Excercise Type">
+                </div>
+                <label class="label">Sets:</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Enter Amount">
+                </div>
+                <label class="label">Reps:</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Enter Amount">
+                </div>
+                <label class="label">Weight:</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Enter Amount">
+                </div>
+                <label class="label">Calories Burned:</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Enter Amount">
+                </div>
+                <label class="label">Workout Duration:</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Enter Workout Duration">
                 </div>
               </div>
             </div>
@@ -171,5 +193,6 @@ box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.628);
   width: 100%;
   border-radius: 5px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.628);
+  padding: 6rem;
 }
 </style>
