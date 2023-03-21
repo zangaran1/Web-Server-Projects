@@ -4,11 +4,11 @@ export interface Workout {
     workoutId: number;
     workoutName: string;
     excercise: string;
-    sets: number;
-    reps: number;
-    weight: number;
-    caloriesBurned: number;
-    duration: number;
+    sets: string;
+    reps: string;
+    weight: string;
+    caloriesBurned: string;
+    duration: string;
     date: string;
 }
 
