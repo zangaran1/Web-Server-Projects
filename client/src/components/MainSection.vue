@@ -2,7 +2,7 @@
     import { ref } from 'vue';
     import { RouterLink } from 'vue-router';
     import { useSession, login } from '@/model/session';
-    import UserProfileView from '@/views/otherViews/userProfileView.vue';
+    import UserProfileView from '@/views/otherViews/UserProfileView.vue';
     import FriendsListView from '@/views/otherViews/FriendsListView.vue';
 
 
