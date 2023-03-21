@@ -9,9 +9,6 @@
             "weight": 225,
             "caloriesBurned": 560,
             "duration": 60,
-            "distance": 0,
-            "pace": 0,
-            "description": "Hit a really nice personal record today on the bench! I am super proud of myself!",
             "date": "2020-03-01"
         },
         {
@@ -23,9 +20,6 @@
             "weight": 585,
             "caloriesBurned": 790,
             "duration": 45,
-            "distance": 0,
-            "pace": 0,
-            "description": "Hit a really nice personal record today on the deadlift! I am super proud of myself!",
             "date": "2020-03-05"
         },
         {
@@ -37,9 +31,6 @@
             "weight": 405,
             "caloriesBurned": 921,
             "duration": 53,
-            "distance": 0,
-            "pace": 0,
-            "description": "Hit a really nice personal record today on the Squat Rack! I am super proud of myself!",
             "date": "2020-03-10"
         }
     ],

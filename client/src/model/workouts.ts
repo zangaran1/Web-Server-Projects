@@ -9,13 +9,17 @@ export interface Workout {
     weight: number;
     caloriesBurned: number;
     duration: number;
-    distance: number;
-    pace: number;
-    description: string;
     date: string;
 }
 
 export function getWorkouts(): Workout[] {
     return data.myworkouts;
+}
+
+export function addWorkout(workout: Workout): void {
+    data.myworkouts.push(workout);
+}
+export function deleteWorkout(workoutId: number): void {
+    data.myworkouts = data.myworkouts.filter(w => w.workoutId !== workoutId);
 }
 
