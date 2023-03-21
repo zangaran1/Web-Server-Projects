@@ -2,7 +2,7 @@
     import { ref } from 'vue';
     import { RouterLink } from 'vue-router';
     import { useSession, login } from '@/model/session';
-    import UserProfileView from '@/views/otherViews/UserProfileView.vue';
+    import UserProfile from '@/views/otherViews/UserProfileView.vue'; 
     import FriendsListView from '@/views/otherViews/FriendsListView.vue';
 
 
@@ -20,7 +20,7 @@ const session = useSession();
     <div class="card-content">
         <div class="content">
             <div class="user-profle-content">
-                <UserProfileView />
+                <UserProfile />
             </div>
             <div class="friends-list">
                 <FriendsListView />
