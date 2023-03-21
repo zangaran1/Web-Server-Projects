@@ -1,10 +1,8 @@
 <script setup lang="ts">
-    import { ref } from 'vue';
-    import { RouterLink } from 'vue-router';
-    import { useSession, login } from '@/model/session';
+    import { useSession} from '@/model/session';
 
     import FriendsListView from '@/views/otherViews/FriendsListView.vue';
-    import UserProfileView from '@/views/otherViews/userProfileView.vue';
+    import UserProfileView from '../views/otherViews/userProfileView.vue';
 
 
 const session = useSession();
@@ -20,7 +18,7 @@ const session = useSession();
 
     <div class="card-content">
         <div class="content">
-            <div class="user-profle-content">
+            <div class="user-profle-content" v-if="session.user">
                 <UserProfileView />
             </div>
             <div class="friends-list">

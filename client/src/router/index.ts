@@ -4,7 +4,7 @@ import WorkoutsView from '../views/navbarFolder/WorkoutsView.vue'
 import JournalView from '../views/navbarFolder/JournalView.vue'
 import StatsView from '../views/navbarFolder/StatsView.vue'
 import AdminView from '../views/navbarFolder/AdminView.vue'
-import UserProfileView from '../views/otherViews/UserProfileView.vue'
+import UserProfileView from '../views/otherViews/userProfileView.vue'
 import SignUp from '../views/navbarFolder/SignUpView.vue'
 import { useSession } from '@/model/session'
 
