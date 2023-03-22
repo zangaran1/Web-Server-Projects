@@ -9,7 +9,7 @@ const session = reactive({
 })
 
 interface User {
-    id?: number;
+    userId?: number;
     name: string;
     email?: string;
     photo?: string;
@@ -23,6 +23,8 @@ export function useSession() {
 export function login() {
     session.user = {
         name: "Nicholas Zangara",
+        email: "nzangara25@gmail.com",
+        userId: 1,
     }
 }
 

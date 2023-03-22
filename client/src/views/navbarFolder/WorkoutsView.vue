@@ -93,7 +93,7 @@ const deleteWorkout = (workoutId: number) => {
                   <input class="input" type="text" placeholder="Enter Workout Date" name="date">
                 </div>
                 <div class="control">
-                  <button class="button is-link" @click="newWorkout">Submit</button>
+                  <button class="button is-link" @click="newWorkout" id="submit-btn">Submit</button>
                 </div>
               </div>
             </div>
@@ -255,8 +255,13 @@ box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.628);
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.628);
   font-size: 2rem;
 }
+.card-top{
+  text-align: center;
+}
 .card-top #line{
   background-color: hsl(348, 100%, 61%);
+  margin-left: 20px;
+  margin-right: 20px;
 }
 label{
   color: white;
@@ -270,8 +275,13 @@ label{
   font-size: 1.5rem;
 }
 .card-content{
-  padding: 5rem;
   text-align: center;
   margin: 1rem;
+}
+#submit-btn{
+  margin: 30px;
+}
+modal{
+  z-index: 100;
 }
 </style>
