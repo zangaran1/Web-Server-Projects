@@ -1,0 +1,36 @@
+{
+    "users": [
+        {
+            "userID": 1,
+            "name": "Nicholas Zangara",
+            "username": "nzangara",
+            "email": "nzangara25@gmail.com",
+            "password": "password",
+            "age": 21
+        },
+        {
+            "userID": 2,
+            "name": "Moshe Plotkin",
+            "username": "jewpaltz",
+            "email": "jewpaltz@newpaltz.edu",
+            "password": "password",
+            "age": 35
+        },
+        {
+            "userID": 3,
+            "name": "Pete Alonso",
+            "username": "p_alonso",
+            "email": "alonsop@gmail.com",
+            "password": "password",
+            "age": 27
+        },
+        {
+            "userID": 4,
+            "name": "Mike Trout",
+            "username": "mtrout27",
+            "email": "trouty27@gmail.com",
+            "password": "password",
+            "age": 30
+        }
+    ]
+}
