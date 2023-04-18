@@ -1,12 +1,17 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import { getWorkouts, type Workout } from '../../model/workouts';
+import { ref, vShow } from 'vue';
+import { getWorkouts, getWorkoutUsers, type Workout } from '../../model/workouts';
 import { useSession } from '@/model/session';
+import data from '@/data/users.json';
+
 
 
 const myworkouts = ref( getWorkouts());
 const session = useSession();
 const isModalActive = ref(false);
+const users = ref(data.users);
+
+
 
 const newWorkout = () => {
   const workoutName = document.querySelector('input[name="workoutName"]') as HTMLInputElement;
@@ -17,6 +22,8 @@ const newWorkout = () => {
   const calories = document.querySelector('input[name="calories"]') as HTMLInputElement;
   const duration = document.querySelector('input[name="duration"]') as HTMLInputElement;
   const date = document.querySelector('input[name="date"]') as HTMLInputElement;
+
+  
 
   const newWorkout = {
     workoutId: myworkouts.value.length + 1,
@@ -38,6 +45,10 @@ const newWorkout = () => {
 const deleteWorkout = (workoutId: number) => {
   myworkouts.value = myworkouts.value.filter((workout) => workout.workoutId !== workoutId);
 };
+
+
+
+
 
 </script>
 
@@ -99,14 +110,16 @@ const deleteWorkout = (workoutId: number) => {
             </div>
           </modal>
       </div>
-      
+   
+       
+
       <div class="workout-list">
-        <div class="workout" v-for="workout in myworkouts" :key="workout.workoutId">
+        <div class="workout" v-for="workout in myworkouts" :key="workout.workoutId" v-if="session.user.name"> 
           <div class="close-workout">
             <button class="delete" aria-label="close" @click="deleteWorkout(workout.workoutId)"></button>
           </div>
           <div class="workout-name">
-            <b>{{ session.user.name }}'s </b><b> {{ workout.workoutName }} Workout</b> <span><b>Data Completed: {{ workout.date }}</b></span>
+            <b>{{ workout.workoutUser }}'s </b><b> {{ workout.workoutName }} Workout</b> <span><b>Data Completed: {{ workout.date }}</b></span>
           </div>
           <div class="data-container">
             <div class="workout-data-left">

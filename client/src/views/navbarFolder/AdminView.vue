@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useSession, login } from "@/model/session";
+import data from "@/data/users.json";
 
 const session = useSession();
+const users = ref(data.users);
 </script>
 
 <template>
@@ -17,10 +19,10 @@ const session = useSession();
                 </tr>
             </thead>
             <tbody>
-                <tr v-if="session.user">
-                    <td>{{ session.user.userId }}</td>
-                    <td>{{ session.user.name }}</td>
-                    <td>{{ session.user.email }}</td>
+                <tr v-for="user in users" :key="user.userID">
+                    <td>{{ user.userID }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.email }}</td>
                 </tr>
             </tbody>
         </table>

@@ -2,6 +2,7 @@
     "myworkouts": [
         {
             "workoutId": 1,
+            "workoutUser": "Nicholas Zangara",
             "workoutName": "Push",
             "excercise": "Bench Press",
             "sets": "4",
@@ -13,6 +14,7 @@
         },
         {
             "workoutId": 2,
+            "workoutUser": "Moshe Plotkin",
             "workoutName": "Pull",
             "excercise": "Deadlift",
             "sets": "4",
@@ -24,6 +26,7 @@
         },
         {
             "workoutId": 3,
+            "workoutUser": "Mike Trout",
             "workoutName": "Legs",
             "excercise": "Barbell Back Squat",
             "sets": "4",

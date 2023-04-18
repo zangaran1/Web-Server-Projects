@@ -3,17 +3,19 @@
 
 import { reactive } from "vue";
 import { useRouter } from "vue-router";
+import data from '../data/users.json';
 
 const session = reactive({
     user: null as User | null,
 })
 
-interface User {
-    userId?: number;
+export interface User {
+    userID: number;
     name: string;
-    email?: string;
-    photo?: string;
-    token?: string;
+    username: string;
+    email: string;
+    password: string;
+    age: number;
 }
 
 export function useSession() {
@@ -21,10 +23,13 @@ export function useSession() {
 }
 
 export function login() {
-    session.user = {
-        name: "Nicholas Zangara",
-        email: "nzangara25@gmail.com",
-        userId: 1,
+    const router = useRouter();
+    const user = data.users.find(user => user.username === "admin" && user.password === "admin");
+    if (user) {
+        session.user = user;
+        router.push("/users");
+    } else {
+        alert("Invalid username or password");
     }
 }
 
