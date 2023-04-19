@@ -23,6 +23,9 @@ export function addWorkout(workout: Workout): void {
 export function deleteWorkout(workoutId: number): void {
     data.myworkouts = data.myworkouts.filter(w => w.workoutId !== workoutId);
 }
+export function getWorkoutUsers(): string[] {
+    return data.myworkouts.map(w => w.workoutUser);
+}
 
 
 
