@@ -10,6 +10,10 @@ const myworkouts = ref( getWorkouts());
 const session = useSession();
 const isModalActive = ref(false);
 const users = ref(data.users);
+const workoutUsers = ref(getWorkoutUsers());
+
+
+
 
 
 
@@ -28,6 +32,7 @@ const newWorkout = () => {
   const newWorkout = {
     workoutId: myworkouts.value.length + 1,
     workoutName: workoutName.value,
+    workoutUser: session.user.name,
     excercise: excerciseType.value,
     sets: sets.value,
     reps: reps.value,
@@ -60,61 +65,76 @@ const deleteWorkout = (workoutId: number) => {
       <div class="start-a-workout-section">
         <button class="button is-info is-large" @click="isModalActive = true">Start A New Workout</button>
       </div>
-      <div class="modal-container">
-        <modal v-if="isModalActive" @close="isModalActive = false">
-            <div class="card">
-              <div class="close-card">
-                <button class="delete" aria-label="close" @click="isModalActive = false"></button>
-              </div>
-              <div class="card-top">
-                <h1>Record Your Workout</h1>
-                <hr id="line">
-              </div>
-              <div class="card-content">
-                <label class="label">Workout Name:</label>
-                <div class="control">
-                  <input class="input" type="text" placeholder="Enter Workout Name" name="workoutName">
-                </div>
-                <label class="label">Excercise Type:</label>
-                <div class="control">
-                  <input class="input" type="text" placeholder="Enter Excercise Type" name="excerciseType">
-                </div>
-                <label class="label">Sets:</label>
-                <div class="control">
-                  <input class="input" type="text" placeholder="Enter Amount" name="sets">
-                </div>
-                <label class="label">Reps:</label>
-                <div class="control">
-                  <input class="input" type="text" placeholder="Enter Amount" name="reps">
-                </div>
-                <label class="label">Weight:</label>
-                <div class="control">
-                  <input class="input" type="text" placeholder="Enter Amount" name="weight">
-                </div>
-                <label class="label">Calories Burned:</label>
-                <div class="control">
-                  <input class="input" type="text" placeholder="Enter Amount" name="calories">
-                </div>
-                <label class="label">Workout Duration:</label>
-                <div class="control">
-                  <input class="input" type="text" placeholder="Enter Workout Duration" name="duration">
-                </div>
-                <label class="label">Date:</label>
-                <div class="control">
-                  <input class="input" type="text" placeholder="Enter Workout Date" name="date">
-                </div>
-                <div class="control">
-                  <button class="button is-link" @click="newWorkout" id="submit-btn">Submit</button>
-                </div>
-              </div>
-            </div>
-          </modal>
-      </div>
-   
-       
+      
+       <div class="modal" :class="{ 'is-active': isModalActive }">
+         <div class="modal-background"></div>
+         <div class="modal-card">
+             <header class="modal-card-head">
+          <p class="modal-card-title">Start A New Workout</p>
+                 <button class="delete" aria-label="close" @click="isModalActive = false"></button>
+               </header>
+               <section class="modal-card-body">
+                   <div class="field">
+                       <label class="label">Workout Name</label>
+                       <div class="control">
+                          <input class="input" type="text" placeholder="Workout Name" name="workoutName">
+                        </div>
+                       </div>
+                       <div class="field">
+                        <label class="label">Excercise Type</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Excercise Type" name="excerciseType">
+                      </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Sets</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Sets" name="sets">
+                          </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Reps</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Reps" name="reps">
+                              </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Weight</label>
+                                <div class="control">
+                                  <input class="input" type="text" placeholder="Weight" name="weight">
+                                  </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">Calories Burned</label>
+                                    <div class="control">
+                                        <input class="input" type="text" placeholder="Calories Burned" name="calories">
+                                      </div>
+                                    </div>
+                                    <div class="field">
+                                        <label class="label">Duration</label>
+                                        <div class="control">
+                                            <input class="input" type="text" placeholder="Duration" name="duration">
+                                          </div>
+                                        </div>
+                                        <div class="field">
+                                            <label class="label">
+                                              Date
+                                            </label>
+                                            <div class="control">
+                                                <input class="input" type="date" placeholder="Date" name="date">
+                                              </div>
+                                            </div>
+                                          </section>
+                                          <footer class="modal-card-foot">
+                                              <button class="button is-success" @click="newWorkout">Save changes</button>
+                                              <button class="button" @click="isModalActive = false">Cancel</button>
+                                            </footer>
+                                          </div>
+                                        </div> 
 
+      
       <div class="workout-list">
-        <div class="workout" v-for="workout in myworkouts" :key="workout.workoutId" v-if="session.user.name"> 
+        <div class="workout" v-for="workout in myworkouts" :key="workout.workoutId" v-if="session.user"> 
           <div class="close-workout">
             <button class="delete" aria-label="close" @click="deleteWorkout(workout.workoutId)"></button>
           </div>
@@ -281,8 +301,8 @@ label{
   padding: 5px;
 }
 .control input{
-  background-color: rgb(44, 44, 44);
-  color: white;
+  background-color: rgb(255, 255, 255);
+  color: black;
   border: 1px white solid;
   border-radius: 5px;
   font-size: 1.5rem;

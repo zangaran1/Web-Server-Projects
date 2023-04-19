@@ -19,7 +19,7 @@ const users = ref(data.users);
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="user in users" :key="user.userID">
+                <tr v-for="user in users" :key="user.userID" v-if="session.user">
                     <td>{{ user.userID }}</td>
                     <td>{{ user.name }}</td>
                     <td>{{ user.email }}</td>
