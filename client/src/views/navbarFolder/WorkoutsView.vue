@@ -63,7 +63,7 @@ const deleteWorkout = (workoutId: number) => {
   <div class="section" v-if="session.user">
     <div class="container">
       <div class="start-a-workout-section">
-        <button class="button is-info is-large" @click="isModalActive = true">Start A New Workout</button>
+        <button class="button is-info is-large" @click="isModalActive = true" id="start-btn">Start A New Workout</button>
       </div>
       
        <div class="modal" :class="{ 'is-active': isModalActive }">
@@ -321,5 +321,8 @@ modal{
   background-color: hsl(204, 86%, 53%);
   border-radius: 5px 5px 0 0;
   padding: .25rem;
+}
+#start-btn{
+  background-color: hsl(204, 86%, 53%);
 }
 </style>

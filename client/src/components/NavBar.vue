@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
 import LoginBadge from './LoginBadge.vue';
-
+import SearchBar from './SearchBar.vue';
     const isMenuActive = ref(false);
 
     function toggleMenu() {
@@ -17,7 +17,7 @@ import LoginBadge from './LoginBadge.vue';
         <div class="navbar-brand">
           <a class="navbar-item" href="https://bulma.io">
             
-            <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="22" height="22" />
+            <img alt="Vue logo" class="logo" src="@/assets/brogrammerLogo.svg" width="22" height="22" />
             
           </a>
           <div class="navbar-burger" :class="{ 'is-active': isMenuActive }" @click="toggleMenu" >
@@ -29,7 +29,10 @@ import LoginBadge from './LoginBadge.vue';
       
         <div class="navbar-menu" :class="{ 'is-active': isMenuActive }">
           <div class="navbar-start">
-
+            <div class="navbar-item">
+              <SearchBar />
+            </div>
+            
             <RouterLink to="/" class="navbar-item">
               <span class="icon" id="home-icon">
                 <i class="fa-solid fa-house"></i>
@@ -86,8 +89,6 @@ import LoginBadge from './LoginBadge.vue';
 #navbar-edit:hover{
   background-color: #ff5100d5;
 }
-.navbar-end{
-  margin-right: 7%;
-}
+
 
 </style>
