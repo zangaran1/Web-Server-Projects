@@ -11,12 +11,8 @@ const session = useSession();
 <template>
     <div class="container is-fluid">
             <div class="section">
-            <div class="columns">
-                <div class="column is-one-quarter" id="first-card">
-                    <SideBar />
-                </div>
-                
-                <div class="column is-two-thirds" id="middle-card">
+            <div class="column">
+                <div class="column is-full" id="middle-card">
                     <MainSection />
                 </div>
             </div>
@@ -28,7 +24,7 @@ const session = useSession();
 #middle-card, #first-card{
     margin-top: 10px;
 }
-.columns{
+.column{
     margin-top: 10px;
 }
 
