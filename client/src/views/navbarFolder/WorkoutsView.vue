@@ -212,15 +212,15 @@ box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.628);
 }
 .workout-name{
   padding: 0 1.5rem 1.5rem 1.5rem;
-  background-color: hsl(348, 100%, 61%);
+  background-color: hsl(204, 86%, 53%);
 }
 .workout-name span{
   text-align: right;
   margin-left: 12rem;
-  border: 1px hsl(348, 100%, 61%) solid;
+  border: 1px hsl(204, 86%, 53%) solid;
   padding: .5rem;
   background-color: white;
-  color: hsl(348, 100%, 61%);
+  color: hsl(204, 86%, 53%);
 }
 .data-container{
   display: flex;
@@ -242,7 +242,7 @@ box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.628);
   background-color: rgb(20, 20, 20);
   margin: .5rem;
   border-radius: 12px;
-  border: 1px hsl(348, 100%, 61%) solid;
+  border: 1px hsl(204, 86%, 53%) solid;
   text-align: center;
 }
 .workout-data-left, .workout-data-right{
@@ -257,10 +257,10 @@ box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.628);
   text-align: center;
   border-radius: 12px;
   font-size: 2rem;
-  border: 1px hsl(348, 100%, 61%) solid;
+  border: 1px hsl(204, 86%, 53%) solid;
 }
 .workout-cals{
-  background:linear-gradient(to right, red, pink);
+  background:linear-gradient(to right, hsl(204, 86%, 53%), hsl(204, 100%, 80%) 50%);
   padding: 2rem;
   margin: 1rem;
   font-size: 2rem;
@@ -273,7 +273,7 @@ box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.628);
   padding: 1rem;
   margin: 1rem;
   border-radius: 12px;
-  border: 1px hsl(348, 100%, 61%) solid;
+  border: 1px hsl(204, 86%, 53%) solid;
 }
 .workout-share{
   align-items: center;
@@ -292,7 +292,7 @@ box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.628);
   text-align: center;
 }
 .card-top #line{
-  background-color: hsl(348, 100%, 61%);
+  background-color: hsl(204, 86%, 53%);
   margin-left: 20px;
   margin-right: 20px;
 }
@@ -318,7 +318,7 @@ modal{
   z-index: 100;
 }
 .close-workout{
-  background-color: hsl(348, 100%, 61%);
+  background-color: hsl(204, 86%, 53%);
   border-radius: 5px 5px 0 0;
   padding: .25rem;
 }
