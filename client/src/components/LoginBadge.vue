@@ -56,4 +56,10 @@ const users = ref(data.users);
 #logout-txt{
     margin-left: 10px;
 }
+.navbar-dropdown{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+}
 </style>

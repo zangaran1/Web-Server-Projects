@@ -86,5 +86,8 @@ import LoginBadge from './LoginBadge.vue';
 #navbar-edit:hover{
   background-color: #ff5100d5;
 }
+.navbar-end{
+  margin-right: 7%;
+}
 
 </style>

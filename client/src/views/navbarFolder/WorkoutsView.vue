@@ -134,7 +134,7 @@ const deleteWorkout = (workoutId: number) => {
 
       
       <div class="workout-list">
-        <div class="workout" v-for="workout in myworkouts" :key="workout.workoutId" v-if="session.user"> 
+        <div class="workout" v-for="workout in myworkouts" :key="workout.workoutId" v-show="session.user.name === workout.workoutUser"> 
           <div class="close-workout">
             <button class="delete" aria-label="close" @click="deleteWorkout(workout.workoutId)"></button>
           </div>
@@ -316,5 +316,10 @@ label{
 }
 modal{
   z-index: 100;
+}
+.close-workout{
+  background-color: hsl(348, 100%, 61%);
+  border-radius: 5px 5px 0 0;
+  padding: .5rem;
 }
 </style>
