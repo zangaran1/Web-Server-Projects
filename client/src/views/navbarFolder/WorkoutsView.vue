@@ -211,7 +211,7 @@ box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.628);
  
 }
 .workout-name{
-  padding: 1.5rem;
+  padding: 0 1.5rem 1.5rem 1.5rem;
   background-color: hsl(348, 100%, 61%);
 }
 .workout-name span{
@@ -320,6 +320,6 @@ modal{
 .close-workout{
   background-color: hsl(348, 100%, 61%);
   border-radius: 5px 5px 0 0;
-  padding: .5rem;
+  padding: .25rem;
 }
 </style>
