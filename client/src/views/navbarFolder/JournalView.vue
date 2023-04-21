@@ -20,7 +20,7 @@ const save = () => {
 </script>
 
 <template>
-  <div class="container">
+  <div class="container" v-if="session.user">
     <div class="columns is-centered">
       <div class="column is-half">
         <div class="box">

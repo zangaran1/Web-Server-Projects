@@ -9,7 +9,7 @@ const session = useSession();
 </script>
 
 <template>
-    <div class="container is-fluid">
+    <div class="container is-fluid" v-if="session.user">
             <div class="section">
             <div class="column">
                 <div class="column is-full" id="middle-card">

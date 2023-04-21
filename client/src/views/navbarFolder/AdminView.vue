@@ -8,7 +8,7 @@ const users = ref(data.users);
 </script>
 
 <template>
-    <div class="container">
+    <div class="container" v-if="session.user">
         <table class="table">
             <thead>
                 <tr>

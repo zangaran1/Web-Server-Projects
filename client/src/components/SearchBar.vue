@@ -19,7 +19,7 @@
     background-color: #f5f5f5;
     border-radius: 16px;
     padding: 5px;
-    width: 200px;
+    width: 300px;
 }
 .search-bar i{
     margin: 2px 5px 2px 5px;

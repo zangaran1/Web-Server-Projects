@@ -17,7 +17,7 @@ import SearchBar from './SearchBar.vue';
         <div class="navbar-brand">
           <a class="navbar-item" href="https://bulma.io">
             
-            <img alt="Vue logo" class="logo" src="@/assets/brogrammerLogo.svg" width="22" height="22" />
+            <img alt="Vue logo" class="logo" src="@/assets/codefitlogo.png" width="300" height="44" />
             
           </a>
           <div class="navbar-burger" :class="{ 'is-active': isMenuActive }" @click="toggleMenu" >
@@ -29,42 +29,37 @@ import SearchBar from './SearchBar.vue';
       
         <div class="navbar-menu" :class="{ 'is-active': isMenuActive }">
           <div class="navbar-start">
-            <div class="navbar-item">
-              <SearchBar />
-            </div>
             
             <RouterLink to="/" class="navbar-item">
               <span class="icon" id="home-icon">
                 <i class="fa-solid fa-house"></i>
               </span>
-              Home
             </RouterLink>
             <RouterLink to="/workouts" class="navbar-item">
               <span class="icon" id="workouts-icon">
                 <i class="fa-solid fa-dumbbell"></i>
               </span>
-              My Workouts
             </RouterLink>
             <RouterLink to="/journal" class="navbar-item">
               <span class="icon" id="journal-icon">
                 <i class="fa-solid fa-book"></i>
               </span>
-              Journal
             </RouterLink>
             <RouterLink to="/statistics" class="navbar-item">
               <span class="icon" id="statistics-icon">
                 <i class="fa-solid fa-chart-line"></i>
               </span>
-              Statistics
             </RouterLink>
             <RouterLink to="/admin" class="navbar-item">
               <span class="icon" id="admin-icon">
                 <i class="fa-solid fa-lock"></i>
               </span>
-              Admin
             </RouterLink>
  
           </div>
+          <div class="navbar-item" >
+              <SearchBar />
+            </div>
           </div>
       
           <div class="navbar-end">
@@ -80,15 +75,16 @@ import SearchBar from './SearchBar.vue';
   margin: 2.5px;
 }
 .router-link-active {
-  border-bottom: #2889f7d5 5px solid;
 }
-  
-#navbar-edit{
-  background-color: #ff5100d5;
+
+.navbar{
+  border-bottom: 1px solid hsl(0, 2%, 31%);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  padding: 0 1rem;
+  z-index: 100;
 }
-#navbar-edit:hover{
-  background-color: #ff5100d5;
-}
+
+
 
 
 </style>
