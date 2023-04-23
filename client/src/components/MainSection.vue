@@ -10,27 +10,9 @@ const session = useSession();
 
 <template>
   <div class="card" id="card">
-    <header class="card-header">
-        <p class="card-header-title" id="card-title">
-            Component
-        </p>
-    </header>
 
     <div class="card-content">
-        <div class="content">
-            <div class="user-profle-content" v-if="session.user">
-                <UserProfileView />
-            </div>
-            <div class="friends-list">
-                <FriendsListView />
-            </div>
-            <div class="messages-content">
 
-            </div>
-            <div class="refer-content">
-
-            </div>
-        </div>
     </div>
 </div>
 </template>

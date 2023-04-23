@@ -35,21 +35,6 @@ import SearchBar from './SearchBar.vue';
                 <i class="fa-solid fa-house"></i>
               </span>
             </RouterLink>
-            <RouterLink to="/workouts" class="navbar-item">
-              <span class="icon" id="workouts-icon">
-                <i class="fa-solid fa-dumbbell"></i>
-              </span>
-            </RouterLink>
-            <RouterLink to="/journal" class="navbar-item">
-              <span class="icon" id="journal-icon">
-                <i class="fa-solid fa-book"></i>
-              </span>
-            </RouterLink>
-            <RouterLink to="/statistics" class="navbar-item">
-              <span class="icon" id="statistics-icon">
-                <i class="fa-solid fa-chart-line"></i>
-              </span>
-            </RouterLink>
             <RouterLink to="/admin" class="navbar-item">
               <span class="icon" id="admin-icon">
                 <i class="fa-solid fa-lock"></i>

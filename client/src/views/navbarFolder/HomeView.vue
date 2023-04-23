@@ -3,6 +3,7 @@ import { useSession, login } from '@/model/session';
 import SideBar from '../../components/SideBar.vue';
 import NavBar from '@/components/NavBar.vue';
 import MainSection from '../../components/MainSection.vue';
+import UserWelcomeBanner from '../../components/UserWelcomeBanner.vue';
 
 
 const session = useSession();
@@ -10,10 +11,22 @@ const session = useSession();
 
 <template>
     <div class="container is-fluid" v-if="session.user">
-            <div class="section">
-            <div class="column">
-                <div class="column is-full" id="middle-card">
-                    <MainSection />
+        <div class="section">
+            <div class="columns">
+                <div class="column" id="first-card">
+                    <SideBar />
+                </div>
+                <div class="column is-three-quarters" id="middle-card">
+                    <div class="user-banner">
+                        <UserWelcomeBanner />
+                    </div>
+                    <div class="main-section">
+                        <MainSection />
+                    </div>
+                    
+                </div>
+                <div class="column" id="last-card">
+                    <!--Friends List goes here-->
                 </div>
             </div>
         </div>

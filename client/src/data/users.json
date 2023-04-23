@@ -6,7 +6,8 @@
             "username": "nzangara",
             "email": "nzangara25@gmail.com",
             "password": "password",
-            "age": 21
+            "age": 21,
+            "profilepicture": "https://i.imgur.com/3zjzZ4f.jpg"
         },
         {
             "userID": 2,
