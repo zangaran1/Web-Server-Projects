@@ -21,12 +21,21 @@ const session = useSession();
                         </div>
                         <div class="card-content">
                             <div class="content">
-                                <div class="progress">
-                                    <span>
-                                        <progress class="progress is-primary" value="15" max="100"></progress>
-                                    </span>
+                                <div class="progress-section" style="width: 100%;">
+                                    <progress class="progress is-info" value="560" max="750"></progress> 
+                                    <p style="text-align: right;">
+                                        <strong>560</strong> / 750
+                                    </p> 
                                 </div>
+                                
                             </div>
+                            
+                            <div class="content">
+                                <progress class="progress is-success" value="4" max="6"></progress>  
+                            </div>
+                            <p style="text-align: right;">
+                                <strong>4</strong> / 6
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -68,15 +77,17 @@ const session = useSession();
     .card-header-title{
         color: white;
     }
-    .progress{
-        width: 150px;
-        height: 150px;
-        line-height: 150px;
-        background: none;
-        margin: 0 auto;
-        box-shadow: none;
+    .content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: relative;
+        flex-wrap: wrap;
+        gap: 40px;
     }
+  
+  
+
    
 
 
