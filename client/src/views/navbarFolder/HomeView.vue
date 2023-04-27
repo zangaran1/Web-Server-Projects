@@ -34,8 +34,12 @@ const session = useSession();
 </template>
 
 <style scoped>
-#middle-card, #first-card{
-    margin-top: 10px;
+#middle-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
 }
 .column{
     margin-top: 10px;

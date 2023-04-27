@@ -22,7 +22,7 @@ const session = useSession();
                         <div class="card-content">
                             <div class="content">
                                 <div class="progress-section" style="width: 100%;">
-                                    <progress class="progress is-info" value="560" max="750"></progress> 
+                                    <progress class="progress" value="560" max="750"></progress> 
                                     <p style="text-align: right;">
                                         <strong>560</strong> / 750
                                     </p> 
@@ -85,7 +85,10 @@ const session = useSession();
         flex-wrap: wrap;
         gap: 40px;
     }
-  
+    progress{
+        
+    }
+    
   
 
    

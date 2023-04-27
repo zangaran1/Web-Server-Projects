@@ -7,6 +7,7 @@ export interface User {
     email: string;
     password: string;
     age: number;
+    image: string;
 }
 
 export function getUsers(): User[] {

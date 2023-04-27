@@ -1,10 +1,12 @@
 <script setup lang="ts">
     import { useSession} from '@/model/session';
+    import data from '@/data/users.json';
 
     import FriendsListView from '@/views/otherViews/FriendsListView.vue';
     import UserProfileView from '../views/otherViews/userProfileView.vue';
 
     const session = useSession();
+    const users = data.users;
 </script>
 
 <template>
@@ -12,7 +14,7 @@
     <div class="top-banner" v-if="session.user">
         <div class="banner">
             <div class="user-profile-picture">
-                <img src="../assets/pics/picme.png" alt="" id="profile-pic">
+                <img id="profile-pic" :src="session.user.image" alt="Profile Picture">
             </div>
             <div class="welcome">
                 <h1>Hello, {{ session.user.name }}!</h1>
@@ -39,6 +41,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
+    
 }
 .welcome h1{
     padding-left: 20px;
@@ -49,6 +53,17 @@
     padding-left: 20px;
     color: white;
     font-size: 1rem;
+}
+.user-profile-picture{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(44, 44, 44);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    border: 1px solid hsl(204, 86%, 53%);
 }
 
 </style>
