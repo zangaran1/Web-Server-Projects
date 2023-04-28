@@ -11,14 +11,28 @@
 
 <template>
     
+    <div class="username-header" v-if="session.user">
+        <h1>@{{session.user.username}}</h1>
+    </div>
     <div class="top-banner" v-if="session.user">
         <div class="banner">
             <div class="user-profile-picture">
                 <img id="profile-pic" :src="session.user.image" alt="Profile Picture">
             </div>
-            <div class="welcome">
-                <h1>Hello, {{ session.user.name }}!</h1>
-                <p>Welcome to your home dashboard. You can access all features of the program here!</p>
+            <div class="user-credentials">
+                <div class="posts-box">
+                    <p>Total Posts: 0</p>
+                </div>  
+                <div class="total-workouts-box">
+                    <p>Total Workouts: 0</p>
+                </div>
+            
+                <div class="following-box">
+                    <p>Following: 0</p>
+                </div>
+                <div class="followers-box">
+                    <p>Followers: 0</p>
+                </div>              
             </div>
         </div>    
     </div>
@@ -36,34 +50,64 @@
     display: flex;
     flex-direction: row;
     padding: 10px;
+    width: 100%;
 }
 .banner{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    width: 100%;
     
 }
-.welcome h1{
-    padding-left: 20px;
-    color: white;
-    font-size: 2rem;
+.user-credentials{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
 }
-.welcome p{
-    padding-left: 20px;
-    color: white;
-    font-size: 1rem;
-}
+
+
 .user-profile-picture{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: rgb(44, 44, 44);
+    background-color: rgb(255, 255, 255);
     border-radius: 50%;
-    width: 100px;
+    margin: 10px;
+    padding: 5px;
+    width: 120px;
     height: 100px;
-    border: 1px solid hsl(204, 86%, 53%);
+    border: 5px solid hsl(204, 86%, 53%);
 }
-
+.posts-box, .total-workouts-box, .following-box, .followers-box{
+    background-color: rgb(56, 56, 56);
+    border-radius: 20px;
+    padding: 5px;
+    margin: 15px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.posts-box p, .total-workouts-box p, .following-box p, .followers-box p{
+    padding: .5rem;
+}
+.username-header{
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+}
+.username-header h1{
+    background-color: rgb(56, 56, 56);
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 25px;
+    font-weight: 500;
+}
 </style>

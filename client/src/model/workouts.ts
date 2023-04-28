@@ -26,6 +26,11 @@ export function deleteWorkout(workoutId: number): void {
 export function getWorkoutUsers(): string[] {
     return data.myworkouts.map(w => w.workoutUser);
 }
+// get most recent workout in the list
+
+export function getMostRecentWorkout(): Workout {
+    return data.myworkouts[data.myworkouts.length - 1];
+}
 
 
 

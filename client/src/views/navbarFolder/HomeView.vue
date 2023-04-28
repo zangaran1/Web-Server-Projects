@@ -10,50 +10,38 @@ const session = useSession();
 </script>
 
 <template>
-    <div class="container is-fluid" v-if="session.user">
-        <div class="section">
-            <div class="columns">
-                <div class="column" id="first-card">
-                    <SideBar />
-                </div>
-                <div class="column is-three-quarters" id="middle-card">
-                    <div class="user-banner">
-                        <UserWelcomeBanner />
+    <div class="section" v-if="session.user">
+        <div class="card">
+            <div class="card-top">
+            </div>
+            <div class="card-content">
+                <div class="columns">
+                    <div class="column is-two-thirds">
+                        <MainSection/>
                     </div>
-                    <div class="main-section">
-                        <MainSection />
+                    <div class="column">
+                        <SideBar/>
                     </div>
-                    
-                </div>
-                <div class="column" id="last-card">
-                    <!--Friends List goes here-->
                 </div>
             </div>
+
         </div>
     </div>
 </template>
 
 <style scoped>
-#middle-card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: blue;
-}
-.column{
-    margin-top: 10px;
-}
-
-#card-title{
-    background-color: teal;
-    justify-content: center;
-}
-#menu-content{
+    .section{
+        
+    }
+    .card{
+        background-color: rgb(44, 44, 44);
+    }
+    .card-top{
+        background-color: hsl(204, 86%, 53%);
+        width: 100%;
+        height: 50px;
+        border-radius: 16px 16px 0px 0px;
+    }
     
-}
-.container{
     
-}
-
 </style>
