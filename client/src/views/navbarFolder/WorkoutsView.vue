@@ -27,7 +27,9 @@ const newWorkout = () => {
   const duration = document.querySelector('input[name="duration"]') as HTMLInputElement;
   const date = document.querySelector('input[name="date"]') as HTMLInputElement;
 
-  
+  if (!session || !session.user) {
+    return;
+  }
 
   const newWorkout = {
     workoutId: myworkouts.value.length + 1,

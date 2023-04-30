@@ -2,7 +2,7 @@ import data from '../data/myworkouts.json'
 
 export interface Workout {
     workoutId: number;
-    workoutUser: string;
+    workoutUser?: string;
     workoutName: string;
     excercise: string;
     sets: string;
@@ -15,10 +15,10 @@ export interface Workout {
 
 export function getWorkouts(): Workout[] {
     return data.myworkouts;
-}
+} 
 
 export function addWorkout(workout: Workout): void {
-    data.myworkouts.push(workout);
+    data.myworkouts.push(workout as never);
 }
 export function deleteWorkout(workoutId: number): void {
     data.myworkouts = data.myworkouts.filter(w => w.workoutId !== workoutId);

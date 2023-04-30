@@ -17,6 +17,8 @@ export interface User {
     password: string;
     age: number;
     image: string;
+    bio: string;
+    friends: string[];
 }
 
 export function useSession() {
