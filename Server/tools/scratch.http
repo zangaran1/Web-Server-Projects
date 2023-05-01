@@ -1,4 +1,21 @@
+@port=3003
+@token={{login.response.body.data.token}}
+
 ###
 https://dummyjson.com/products/add
 
 ### 
+GET http://localhost:{{port}}/api/v1/users
+Authorization: Bearer {{token}}
+
+### 
+# @name login
+POST  http://localhost:{{port}}/api/v1/users/login
+Content-Type: application/json
+
+{
+    
+"email":"nzangara25@gmail.com",
+"password": "password"
+
+}

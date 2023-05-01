@@ -1,9 +1,7 @@
 //const data = require('../data/workouts.json');
 const jwt = require('jsonwebtoken');
 const { connect, ObjectId } = require('./mongo');
-const { env } = require('process');
-const {StatusCodes} = require('http-status-codes');
-const bcrypt = require('bcrypt');
+
 
 const COLLECTION_NAME = 'users';
 
@@ -138,7 +136,7 @@ async function login(email, password) {
 
 async function oAuthLogin(provider, accessToken) {
     // validate the access token
-    // if valid, return the user
+    // if valid, return the user 
     // if not, create a new user
     // return the user
 }
