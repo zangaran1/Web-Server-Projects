@@ -1,30 +1,28 @@
-const API_URL = import.meta.env.VITE_API_URL ?? '/api/v1/';
+const API_ROOT = import.meta.env.VITE_API_ROOT;
 
-export function rest(url: string, data?: any, method?: string, headers?: any){
-    return fetch(url, {
-        method: method ?? (data ? 'POST' : 'GET'),
-        headers: {
-            'Content-Type': 'application/json',
-            ...headers,
-        },
-        body: data ? JSON.stringify(data) : undefined,
-    })
-        .then(res => res.ok 
-            ? res.json() 
-            : res.json().then(x=> { throw({ ...x, message: x.error }) } )
-        );
-}
+export const api = (
+    url: string,
+    body?: any,
+    method?: string,
+    headers?: HeadersInit
+) => {
+    let options: RequestInit = {
+        method: method || 'GET',
+        headers,
+    };
 
-export function api(url: string, data?: any, method?: string, headers?: any){
-    return rest(API_URL + url, data, method, headers);
-}
+    if (body) {
+        options = {
+            method: method || 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+                ...options.headers,
+            },
+            cache: 'no-cache',
+            body: JSON.stringify(body),
+        };
+    }
 
-export type DataEnvelope<T> = {
-    data: T,
-    isSuccess: boolean,
-    error?: string,
-}
-
-export type DataListEnvelope<T> = DataEnvelope<T[]> & {
-    total: number,
-}
+    return fetch(API_ROOT + url, options).then((response) => response.json());
+};
