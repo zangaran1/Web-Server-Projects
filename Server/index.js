@@ -11,12 +11,11 @@ const hostname = '127.0.0.1';
 const port = process.env.PORT || 3003;
 
 // Middleware
-app
-    .use(express.json())
-    .use(express.static(path.join(__dirname, '../client/dist')))
+    app.use('/', express.static('./client/dist'));
+    app.use(express.json());
 
     // CORS
-    .use((req, res, next) => {
+    app.use((req, res, next) => {
         res.header('Access-Control-Allow-Origin', '*')
         res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization')
         res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS')
@@ -42,7 +41,7 @@ app
 
 // Catch all
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/dist/index.html'))
+    res.sendFile('index.html', { root: './client/dist' });
 })
 
 // Error handling
