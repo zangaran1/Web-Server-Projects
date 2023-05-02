@@ -1,39 +1,31 @@
-import data from '../data/myworkouts.json'
+import type { DataEnvelope, DataListEnvelope } from "./myFetch";
+import { api } from "./session";
 
 export interface Workout {
-    workoutId: number;
+    workoutId?: number;
     workoutUser?: string;
-    workoutName: string;
-    excercise: string;
-    sets: string;
-    reps: string;
-    weight: string;
-    caloriesBurned: string;
-    duration: string;
-    date: string;
+    workoutName?: string;
+    excercise?: string;
+    sets?: string;
+    reps?: string;
+    weight?: string;
+    caloriesBurned?: string;
+    duration?: string;
+    date?: string;
 }
 
-export function getWorkouts(): Workout[] {
-    return data.myworkouts;
-} 
+export function getWorkouts(): Promise<DataListEnvelope<Workout>> {
 
-export function addWorkout(workout: Workout): void {
-    data.myworkouts.push(workout as never);
-}
-export function deleteWorkout(workoutId: number): void {
-    data.myworkouts = data.myworkouts.filter(w => w.workoutId !== workoutId);
-}
-export function getWorkoutUsers(): string[] {
-    return data.myworkouts.map(w => w.workoutUser);
-}
-// get most recent workout in the list
+    return api('workouts')
 
-export function getMostRecentWorkout(): Workout {
-    return data.myworkouts[data.myworkouts.length - 1];
 }
 
+export function getWorkout(id: number): Promise<DataEnvelope<Workout>> {
 
+    return api(`workouts/${id}`)
 
+}
 
-
-
+export function createWorkout(workout: Workout): Promise<DataEnvelope<Workout>> {
+        return api('workouts', workout)
+}

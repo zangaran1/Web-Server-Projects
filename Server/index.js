@@ -1,7 +1,5 @@
 require('dotenv').config()
 const express = require('express')
-const path = require('path');
-const jokes = require('./controllers/jokes');
 const workouts = require('./controllers/workouts')
 const users = require('./controllers/users')
 const { requireLogin, parseAuthorizationHeader } = require('./middleware/authorization')
@@ -35,9 +33,8 @@ app
     .get('/api/v1/', (req, res) => {
         res.send('Hello World! From Express')
     })
-    .use('/api/v1/workouts', requireLogin(), workouts)
+    .use('/api/v1/workouts', workouts)
     .use('/api/v1/users', users)
-    .use('/api/v1/jokes', jokes)
 
 // Catch all
 app.get('*', (req, res) => {

@@ -1,27 +1,161 @@
-const data = require('../data/myworkouts.json');
 const { connect, ObjectId } = require('./mongo');
 
 const COLLECTION_NAME = 'workouts';
 
+const data = [
+    {
+        "workoutId": 1,
+        "workoutUser": "Nicholas Zangara",
+        "workoutName": "Push",
+        "excercise": "Bench Press",
+        "sets": "4",
+        "reps": "10",
+        "weight": "225",
+        "caloriesBurned": "560",
+        "duration": "60",
+        "date": "2020-03-01"
+    },
+    {
+        "workoutId": 2,
+        "workoutUser": "Moshe Plotkin",
+        "workoutName": "Pull",
+        "excercise": "Deadlift",
+        "sets": "4",
+        "reps": "10",
+        "weight": "585",
+        "caloriesBurned": "790",
+        "duration": "45",
+        "date": "2020-03-05"
+    },
+    {
+        "workoutId": 3,
+        "workoutUser": "Mike Trout",
+        "workoutName": "Legs",
+        "excercise": "Barbell Back Squat",
+        "sets": "4",
+        "reps": "5",
+        "weight": "405",
+        "caloriesBurned": "921",
+        "duration": "53",
+        "date": "2020-03-10"
+    },
+    {
+        "workoutId": 4,
+        "workoutUser": "Pete Alonso",
+        "workoutName": "Legs",
+        "excercise": "Barbell Back Squat",
+        "sets": "4",
+        "reps": "5",
+        "weight": "405",
+        "caloriesBurned": "921",
+        "duration": "53",
+        "date": "2020-03-10"
+    },
+    {
+        "workoutId": 5,
+        "workoutUser": "Mike Trout",
+        "workoutName": "Legs",
+        "excercise": "Barbell Back Squat",
+        "sets": "4",
+        "reps": "5",
+        "weight": "405",
+        "caloriesBurned": "921",
+        "duration": "53",
+        "date": "2020-03-10"
+    },
+    {
+        "workoutId": 6,
+        "workoutUser": "Nicholas Zangara",
+        "workoutName": "Legs",
+        "excercise": "Barbell Back Squat",
+        "sets": "4",
+        "reps": "5",
+        "weight": "405",
+        "caloriesBurned": "921",
+        "duration": "53",
+        "date": "2020-03-10"
+    },
+    {
+        "workoutId": 7,
+        "workoutUser": "Nicholas Zangara",
+        "workoutName": "Legs",
+        "excercise": "Barbell Back Squat",
+        "sets": "4",
+        "reps": "5",
+        "weight": "405",
+        "caloriesBurned": "921",
+        "duration": "53",
+        "date": "2020-03-10"
+    },
+    {
+        "workoutId": 8,
+        "workoutUser": "Mike Trout",
+        "workoutName": "Legs",
+        "excercise": "Barbell Back Squat",
+        "sets": "4",
+        "reps": "5",
+        "weight": "405",
+        "caloriesBurned": "921",
+        "duration": "53",
+        "date": "2020-03-10"
+    },
+    {
+        "workoutId": 9,
+        "workoutUser": "Moshe Plotkin",
+        "workoutName": "Legs",
+        "excercise": "Barbell Back Squat",
+        "sets": "4",
+        "reps": "5",
+        "weight": "405",
+        "caloriesBurned": "921",
+        "duration": "53",
+        "date": "2020-03-10"
+    },
+    {
+        "workoutId": 10,
+        "workoutUser": "Pete Alonso",
+        "workoutName": "Legs",
+        "excercise": "Barbell Back Squat",
+        "sets": "4",
+        "reps": "5",
+        "weight": "405",
+        "caloriesBurned": "921",
+        "duration": "53",
+        "date": "2020-03-10"
+    },
+    {
+        "workoutId": 11,
+        "workoutUser": "Nicholas Zangara",
+        "workoutName": "Legs",
+        "excercise": "Barbell Back Squat",
+        "sets": "4",
+        "reps": "5",
+        "weight": "405",
+        "caloriesBurned": "921",
+        "duration": "53",
+        "date": "2020-03-10"
+    }
+]
+    
 async function collection() {
     const db = await connect();
     return db.collection(COLLECTION_NAME);
 }
 
-async function getAll(page = 1, pageSize = 10) {
+async function getWorkouts(page = 1, pageSize = 30) {
     const col = await collection();
     const items = await col.find().skip((page-1) * pageSize).limit(pageSize).toArray();
     const total = await col.countDocuments();
     return { items, total };
 }
 
-async function getById(id) {
+async function getWorkout(id) {
     const col = await collection();
     const item = await col.findOne({ _id: new ObjectId(id) });
     return item;
 }
 
-async function add(item) {
+async function addWorkout(item) {
     const col = await collection();
 
     const result = await col.insertOne(item);
@@ -30,7 +164,7 @@ async function add(item) {
     return item;
 }
 
-async function update(item) {
+async function updateWorkout(item) {
 
     console.log(item);
     const col = await collection();
@@ -43,39 +177,26 @@ async function update(item) {
     return result.value;
 }
 
-async function deleteItem(id) {
+async function deleteWorkout(id) {
     const col = await collection();
     const result = await col.deleteOne({ _id: new ObjectId(id) });
     return result.deletedCount;
 }
 
-async function search(searchTerm, page = 1, pageSize = 30) {
-    const col = await collection();
-    const query = {
-        $or: [
-            { title: { $regex: searchTerm, $options: 'i' } },
-            { description: { $regex: searchTerm, $options: 'i' } },
-            { brand: { $regex: searchTerm, $options: 'i' } }
-        ]
-    };
-
-    const items = await col.find(query).skip((page - 1) * pageSize).limit(pageSize).toArray();
-    const total = await col.countDocuments(query);
-    return { items, total };
-}
 
 async function seed() {
     const col = await collection();
-    const result = await col.insertMany(data.workouts);
-    return result.insertedCount;
+    col.insertMany(data.workouts);
+    return 'success';
 }
 
 module.exports = {
-    getAll,
-    getById,
-    add,
-    update,
-    deleteItem,
-    search,
-    seed,
+    COLLECTION_NAME,
+    collection,
+    getWorkouts,
+    getWorkout,
+    addWorkout,
+    updateWorkout,
+    deleteWorkout,
+    seed
 };

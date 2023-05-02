@@ -1,8 +1,6 @@
 @port=3003
 @token={{login.response.body.data.token}}
 
-###
-https://dummyjson.com/products/add
 
 ### 
 GET http://localhost:{{port}}/api/v1/users
@@ -19,3 +17,9 @@ Content-Type: application/json
 "password": "password"
 
 }
+
+###
+# @name login
+GET http://localhost:{{port}}/api/v1/workouts
+Authorization: Bearer {{ token }}
+

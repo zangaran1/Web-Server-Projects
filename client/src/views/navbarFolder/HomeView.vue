@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useSession, login } from '@/model/session';
+import { useSession, useLogin } from '@/model/session';
 import SideBar from '../../components/SideBar.vue';
 import NavBar from '@/components/NavBar.vue';
 import MainSection from '../../components/MainSection.vue';
@@ -30,9 +30,6 @@ const session = useSession();
 </template>
 
 <style scoped>
-    .section{
-        
-    }
     .card{
         background-color: rgb(44, 44, 44);
     }

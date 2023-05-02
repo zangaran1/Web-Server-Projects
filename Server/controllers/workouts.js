@@ -11,7 +11,7 @@ router
             }).catch(next);
     })
 
-    .get('/purchases', (req, res, next) => {
+    .get('/workouts', (req, res, next) => {
         model.getAll(+req.query.page, +req.query.pageSize)
             .then(list => {
                 const data = { data: list.items, total: list.total, isSuccess: true };
