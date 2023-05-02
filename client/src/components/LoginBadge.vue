@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import { useSession, login } from '@/model/session';
-import { useRoute, useRouter } from 'vue-router';
-import data from '@/data/users.json';
+import { useSession, useLogin, useLogout } from '@/model/session';
 
 const session = useSession();
+const logout = useLogout();
+const login = useLogin();
 
-const route = useRoute();
-const router = useRouter();
+function logout2() {
+    logout();
+}
 
 // const users that connects to the interface users
-const users = ref(data.users);
+
 
 </script>
 
@@ -19,31 +19,23 @@ const users = ref(data.users);
             
             <div class="navbar-item" v-if="session.user">
                 Welcome, {{ session.user.name }}
-                <a class="button is-info" id="logout-txt" @click=" session.user = null">Logout</a>
+                (<a @click="logout2()">logout</a>)
             </div>
             <div class="navbar-item" v-else>
-                <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link">
-                    Login
+                <a class="button is-primary" @click="login">
+                    <span class="icon">
+                        <i class="fas fa-user"></i>
+                    </span>
+                    <strong>Login</strong>
                 </a>
-                <div class="navbar-dropdown">
-                    <a class="navbar-item" v-for="user in users" :key="user.userID" @click="session.user = user">
-                        {{ user.name }}
-                    </a>
-                    <hr class="navbar-divider">
-                    <a class="navbar-item" data-toggle="modal" data-target="#exampleModal">
-                        <RouterLink to="/signup" class="signup-page">
-                            <a class="navbar-item">
-                                <span class="icon">
-                                    <i class="fas fa-user-plus"></i>
-                                </span>
-                                <strong>Sign up</strong>
-                            </a>
-                        </RouterLink>
-                    </a>       
-                </div>
+                <a class="button is-info">
+                    <span class="icon">
+                        <i class="fas fa-user-plus"></i>
+                    </span>
+                    <strong>Sign up</strong>
+                </a>
             </div>
-            </div>
+
 
 
 </template>
