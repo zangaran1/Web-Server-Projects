@@ -65,7 +65,7 @@ const session = useSession();
             </div>
             <div class="box-section">
                 <div class="box is-info" id="box-1">
-                    <RouterLink to="/workouts" class="navbar-item">
+                    <RouterLink to="/friends" class="navbar-item">
                         <span class="icon" id="friends-icon">
                             <i class="fa-solid fa-user-friends"></i>
                         </span>

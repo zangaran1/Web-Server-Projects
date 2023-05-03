@@ -142,7 +142,7 @@ async function collection() {
     return db.collection(COLLECTION_NAME);
 }
 
-async function getWorkouts(page = 1, pageSize = 30) {
+async function getAll(page = 1, pageSize = 30) {
     const col = await collection();
     const items = await col.find().skip((page-1) * pageSize).limit(pageSize).toArray();
     const total = await col.countDocuments();
@@ -193,7 +193,7 @@ async function seed() {
 module.exports = {
     COLLECTION_NAME,
     collection,
-    getWorkouts,
+    getAll,
     getWorkout,
     addWorkout,
     updateWorkout,

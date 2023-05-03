@@ -1,4 +1,4 @@
-export const API_URL = import.meta.env.VITE_API_ROOT ?? '/api/v1/';
+export const API_URL = import.meta.env.VITE_API_ROOT;
 
 export async function rest(url: string, data?: any, method?: string, headers?: any){
     return fetch(url, {

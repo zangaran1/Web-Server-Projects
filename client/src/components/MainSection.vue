@@ -1,10 +1,8 @@
 <script setup lang="ts">
     import { useSession} from '@/model/session';
-
-    import FriendsListView from '@/views/otherViews/FriendsListView.vue';
-    import UserProfileView from '../views/otherViews/userProfileView.vue';
     import UserWelcomeBanner from './UserWelcomeBanner.vue';
     import DailyWeightTracker from './DailyWeightTracker.vue';
+
 
 
 const session = useSession();
