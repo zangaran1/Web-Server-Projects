@@ -2,10 +2,16 @@
 import { ref } from 'vue';
 import { useSession, useLogin } from '@/model/session';
 import { getWorkouts, type Workout } from '@/model/workouts';
+import {getUsers , type AppUser} from '@/model/appUsers';
 
 const workouts = ref<Workout[]>([]);
 getWorkouts().then((data) => {
     workouts.value = data.data;
+});
+
+const users = ref<AppUser[]>([]);
+getUsers().then((data) => {
+    users.value = data.data;
 });
 
 const session = useSession();
@@ -14,7 +20,7 @@ const session = useSession();
 <template>
     <div class="section">
         <div class="columns">
-            <div class="column is-four-fifths">
+            <div class="column is-three-quarters">
                 <div class="friends-activity" v-for="friendsWorkout in workouts" v-if="session.user" v-show="session.user.name !== friendsWorkout.workoutUser">
                     <div class="card">
             <div class="card-header">
@@ -58,17 +64,15 @@ const session = useSession();
           </div>
                 </div>
             </div>
-            <div class="column">
+            <div class="column" id="column2">
                 <div class="friends-bar">
-                    <div class="friends" v-for="friends in session.user?.friends" v-if="session.user" v-show="session.user.friends">
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="card-top-left">
-                                    {{ friends }}
-                                </div>
-                                <div class="card-top-right">
-                                    <button class="button is-danger is-small" @click="session.user?.friends.splice(session.user?.friends.indexOf(friends), 1)">Unfriend</button>
-                                </div>
+                    <div class="friends" v-for="user in users" v-if="session.user" v-show="session.user.name !== user.name">
+                        <div class="friends-container">
+                            <div class="user-profile-picture">
+                                <img id="profile-pic" :src="user.image" alt="Profile Picture">
+                            </div>
+                            <div class="user-credentials">
+                                {{ user.username }}
                             </div>
                         </div>
                     </div>
@@ -170,4 +174,45 @@ const session = useSession();
     justify-content: center;
     align-items: center;
   }
+    .friends-bar{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+    #profile-pic{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        background-color: rgb(56, 56, 56);
+        border: 2px solid hsl(204, 86%, 53%);
+    }
+    .friends{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(44, 44, 44);
+        border-radius: 5px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        padding: 0px 10px 0px 10px;
+        color: white;
+    }
+    .user-credentials{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+    .friends-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+
 </style>

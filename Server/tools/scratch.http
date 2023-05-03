@@ -22,4 +22,8 @@ Content-Type: application/json
 # @name login
 GET http://localhost:{{port}}/api/v1/workouts
 
+###
+# @name login
+GET http://localhost:{{port}}/api/v1/journals
+
 

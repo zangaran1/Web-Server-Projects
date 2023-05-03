@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const workouts = require('./controllers/workouts')
 const users = require('./controllers/users')
+const journals = require('./controllers/journals')
 const { requireLogin, parseAuthorizationHeader } = require('./middleware/authorization')
 const app = express()
 
@@ -35,6 +36,7 @@ app
     })
     .use('/api/v1/workouts', workouts)
     .use('/api/v1/users', users)
+    .use('/api/v1/journals', journals)
 
 // Catch all
 app.get('*', (req, res) => {
