@@ -7,7 +7,6 @@ const COLLECTION_NAME = 'users';
 
 const data = [
     {
-        "userID": 1,
         "name": "Nicholas Zangara",
         "username": "nzangara",
         "email": "nzangara25@gmail.com",
@@ -15,10 +14,10 @@ const data = [
         "age": 21,
         "image": "https://robohash.org/hicveldicta.png?size=50x50&set=set1",
         "bio": "I am a senior at SUNY New Paltz majoring in Computer Science. I am a huge Mets fan and I love to play video games. I am also a huge fan of the New York Jets and New York Knicks.",
-        "friends": ["jewpaltz", "p_alonso", "mtrout27"]
+        "friends": ["jewpaltz", "p_alonso", "mtrout27"],
+        "isAdmin": true
     },
     {
-        "userID": 2,
         "name": "Moshe Plotkin",
         "username": "jewpaltz",
         "email": "jewpaltz@newpaltz.edu",
@@ -26,10 +25,10 @@ const data = [
         "age": 35,
         "image": "https://robohash.org/autemquasiqui.png?size=50x50&set=set1",
         "bio": "",
-        "friends": ["nzangara", "p_alonso", "mtrout27"]
+        "friends": ["nzangara", "p_alonso", "mtrout27"],
+        "isAdmin": true
     },
     {
-        "userID": 3,
         "name": "Pete Alonso",
         "username": "p_alonso",
         "email": "alonsop@gmail.com",
@@ -37,10 +36,10 @@ const data = [
         "age": 27,
         "image": "https://robohash.org/autemquasiqui.png?size=50x50&set=set1",
         "bio": "I am a professional baseball player for the New York Mets. I am a huge fan of the New York Jets and New York Knicks.",
-        "friends": ["nzangara", "jewpaltz", "mtrout27"]
+        "friends": ["nzangara", "jewpaltz", "mtrout27"],
+        "isAdmin": false
     },
     {
-        "userID": 4,
         "name": "Mike Trout",
         "username": "mtrout27",
         "email": "trouty27@gmail.com",
@@ -48,7 +47,8 @@ const data = [
         "age": 30,
         "image": "https://robohash.org/autemquasiqui.png?size=50x50&set=set1",
         "bio": "I am a professional baseball player for the Los Angeles Angels. I am a huge fan of the New York Jets and New York Knicks.",
-        "friends": ["nzangara", "jewpaltz", "p_alonso"]
+        "friends": ["nzangara", "jewpaltz", "p_alonso"],
+        "isAdmin": false
     },
 ]
 

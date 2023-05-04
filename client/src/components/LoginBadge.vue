@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useSession, useLogin, useLogout } from '@/model/session';
+import router from '@/router';
 
 const session = useSession();
 const logout = useLogout();
@@ -7,6 +8,9 @@ const login = useLogin();
 
 function logout2() {
     logout();
+}
+function toLogin(){
+    router.push('/login');
 }
 
 // const users that connects to the interface users
@@ -19,21 +23,34 @@ function logout2() {
             
             <div class="navbar-item" v-if="session.user">
                 Welcome, {{ session.user.name }}
-                (<a @click="logout2()">logout</a>)
+                <a class="button is-info" @click=logout2>
+                    <span class="icon">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </span>
+                    <strong id="logout-txt">Logout</strong>
+                </a>
             </div>
             <div class="navbar-item" v-else>
-                <a class="button is-primary" @click="login('nzangara25@gmail.com','password')">
-                    <span class="icon">
-                        <i class="fas fa-user"></i>
-                    </span>
-                    <strong>Login</strong>
-                </a>
-                <RouterLink to="/signup" id="signup-btn">
-                    <span class="icon">
-                        <i class="fas fa-user-plus"></i>
-                    </span>
-                    <strong>Sign up</strong>
-                </RouterLink>
+                <div class="login-btn">
+                    <a class="button is-info" @click=toLogin>
+                        <span class="icon">
+                            <i class="fas fa-user"></i>
+                        </span>
+                        <strong>Login</strong>
+                    </a>
+                </div>
+                <div class="signup-btn">
+                    <a class="button is-info">
+                        <RouterLink to="/signup" id="signup-btn">
+                            <span class="icon">
+                                <i class="fas fa-user-plus"></i>
+                            </span>
+                            <strong style="color: white;">Sign up</strong>
+                        </RouterLink>
+                    </a>
+                    
+                </div>
+                
             </div>
 
 
@@ -41,17 +58,13 @@ function logout2() {
 </template>
 
 <style scoped>
-#signup-btn{
-   margin-left: 10px;
-   margin-right: 10px;
-}
-#logout-txt{
-    margin-left: 10px;
-}
-.navbar-dropdown{
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    
-}
+    .button{
+        margin-left: 10px;
+    }
+    .login-btn{
+        margin-right: 10px;
+    }
+    .signup-btn{
+        margin-left: 10px;
+    }
 </style>

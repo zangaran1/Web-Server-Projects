@@ -2,7 +2,6 @@ import type { DataEnvelope, DataListEnvelope } from "./myFetch";
 import { api } from "./session";
 
 export interface User {
-    userId: number;
     name: string;
     username: string;
     email: string;
@@ -12,6 +11,7 @@ export interface User {
     bio?: string;
     friends?: string[];
     token?: string;
+    isAdmin?: boolean;
 }
 
 export function getUsers(): Promise<DataListEnvelope<User>> {
@@ -28,5 +28,8 @@ export function getUser(id: number): Promise<DataEnvelope<User>> {
 
 export function createUser(user: User): Promise<DataEnvelope<User>> {
     return api('users', user)
+}
+export function deleteItem(id: string): Promise<DataEnvelope<User>> {
+    return api(`users/${id}`, {method: 'DELETE'})
 }
 

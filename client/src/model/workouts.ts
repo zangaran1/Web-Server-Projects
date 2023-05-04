@@ -6,12 +6,12 @@ export interface Workout {
     workoutUser?: string;
     workoutName?: string;
     excercise?: string;
-    sets?: string;
-    reps?: string;
-    weight?: string;
-    caloriesBurned?: string;
-    duration?: string;
-    date?: string;
+    sets?: number;
+    reps?: number;
+    weight?: number;
+    caloriesBurned?: number;
+    duration?: number;
+    date?: Date;
 }
 
 export function getWorkouts(): Promise<DataListEnvelope<Workout>> {

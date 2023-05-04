@@ -2,12 +2,11 @@ import type { DataEnvelope, DataListEnvelope } from "./myFetch";
 import { api } from "./session";
 
 export interface Journal {
-    id: number;
-    owner: string;
-    bodyWeight: number;
-    caloriesEaten: number;
-    data: Date;
-    entryContent: string;
+    owner?: string;
+    bodyWeight?: number;
+    caloriesEaten?: number;
+    date?: Date;
+    entryContent?: string;
 }
 
 export function getJournals(): Promise<DataListEnvelope<Journal>> {

@@ -42,9 +42,6 @@ import SearchBar from './SearchBar.vue';
             </RouterLink>
  
           </div>
-          <div class="navbar-item" >
-              <SearchBar />
-            </div>
           </div>
       
           <div class="navbar-end">
