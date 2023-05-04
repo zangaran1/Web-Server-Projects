@@ -149,13 +149,13 @@ async function getAll(page = 1, pageSize = 30) {
     return { items, total };
 }
 
-async function getWorkout(id) {
+async function getById(id) {
     const col = await collection();
     const item = await col.findOne({ _id: new ObjectId(id) });
     return item;
 }
 
-async function addWorkout(item) {
+async function add(item) {
     const col = await collection();
 
     const result = await col.insertOne(item);
@@ -164,7 +164,7 @@ async function addWorkout(item) {
     return item;
 }
 
-async function updateWorkout(item) {
+async function update(item) {
 
     console.log(item);
     const col = await collection();
@@ -194,9 +194,9 @@ module.exports = {
     COLLECTION_NAME,
     collection,
     getAll,
-    getWorkout,
-    addWorkout,
-    updateWorkout,
+    getById,
+    add,
+    update,
     deleteWorkout,
     seed
 };

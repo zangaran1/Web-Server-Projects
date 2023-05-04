@@ -1,6 +1,7 @@
 import { reactive } from "vue";
 import { useRouter } from "vue-router";
 import * as myFetch from "./myFetch";
+import type { User } from "./appUsers";
 
 const session = reactive({
     user: null as User | null,
@@ -12,18 +13,7 @@ const session = reactive({
     redirectUrl: null as string | null,
 })
 
-interface User {
-    userId: number;
-    name: string;
-    username: string;
-    email: string;
-    password?: string;
-    age: number;
-    image?: string;
-    bio?: string;
-    friends?: string[];
-    token?: string;
-}
+
 
 export function useSession() {
     return session;
@@ -56,10 +46,9 @@ export function api(url: string, data?: any, method?: string, headers?: any) {
 export function useLogin() {
     const router = useRouter();
 
-    return async function() {
+    return async function(email: string, password: string) {
         const response = await api("users/login", {
-            "email": "nzangara25@gmail.com",
-            "password": "password"
+            email, password,
         });
 
         session.user = response.data.user;

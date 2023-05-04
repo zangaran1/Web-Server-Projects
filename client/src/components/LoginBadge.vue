@@ -22,18 +22,18 @@ function logout2() {
                 (<a @click="logout2()">logout</a>)
             </div>
             <div class="navbar-item" v-else>
-                <a class="button is-primary" @click="login">
+                <a class="button is-primary" @click="login('nzangara25@gmail.com','password')">
                     <span class="icon">
                         <i class="fas fa-user"></i>
                     </span>
                     <strong>Login</strong>
                 </a>
-                <a class="button is-info">
+                <RouterLink to="/signup" id="signup-btn">
                     <span class="icon">
                         <i class="fas fa-user-plus"></i>
                     </span>
                     <strong>Sign up</strong>
-                </a>
+                </RouterLink>
             </div>
 
 

@@ -2,14 +2,14 @@
 import { ref } from 'vue';
 import { useSession, useLogin } from '@/model/session';
 import { getWorkouts, type Workout } from '@/model/workouts';
-import {getUsers , type AppUser} from '@/model/appUsers';
+import {getUsers , type User} from '@/model/appUsers';
 
 const workouts = ref<Workout[]>([]);
 getWorkouts().then((data) => {
     workouts.value = data.data;
 });
 
-const users = ref<AppUser[]>([]);
+const users = ref<User[]>([]);
 getUsers().then((data) => {
     users.value = data.data;
 });

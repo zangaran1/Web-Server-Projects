@@ -8,6 +8,7 @@
     workouts.value = data.data;
 });
 
+
 const session = useSession();
 
 // show only the most recent workout
@@ -17,7 +18,7 @@ const session = useSession();
     
 <div class="section">
     <div class="column">
-        <div class="recent-workout" v-for="workout in workouts"  v-if="session.user" v-show="workouts.length-1 && session.user.name === workout.workoutUser && workout.workoutId === workouts.length">
+        <div class="recent-workout" v-for="workout in workouts"  v-if="session.user" v-show="workouts.length && session.user.name === workout.workoutUser">
             <div class="card">
                 <div class="card-header">
                     <div class="card-top-left">

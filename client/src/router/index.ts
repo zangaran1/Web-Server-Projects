@@ -8,6 +8,7 @@ import UserProfileView from '../views/otherViews/userProfileView.vue'
 import SignUp from '../views/navbarFolder/SignUpView.vue'
 import FriendsListView from '../views/otherViews/FriendsListView.vue'
 import { useSession } from '@/model/session'
+import LogIn from '../views/navbarFolder/Login.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -52,6 +53,11 @@ const router = createRouter({
       path: '/signup',
       name: 'signup',
       component: SignUp
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: LogIn
     }
   ]
 })

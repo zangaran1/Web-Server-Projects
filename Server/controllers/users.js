@@ -32,7 +32,7 @@ router
 
     })
 
-    .post('/', requireLogin(true) ,(req, res, next) => {
+    .post('/', (req, res, next) => {
 
         model.add(req.body)
             .then(x => {

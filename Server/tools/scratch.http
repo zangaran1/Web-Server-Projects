@@ -26,4 +26,36 @@ GET http://localhost:{{port}}/api/v1/workouts
 # @name login
 GET http://localhost:{{port}}/api/v1/journals
 
+###
+POST http://localhost:{{port}}/api/v1/users
+Content-Type: application/json
+
+{   
+    "name": "Joe Smith",
+    "username": "jsmith",
+    "email": "jsmith@gmail.com",
+    "password": "password",
+    "age": 30,
+    "image": "https://robohash.org/autemquasiqui.png?size=50x50&set=set1"    
+}
+
+###
+POST http://localhost:{{port}}/api/v1/workouts
+Content-Type: application/json
+
+{
+    "workoutUser": "Nicholas Zangara",
+    "workoutName": "Legs",
+    "excercise": "Barbell Back Squat",
+    "sets": "4",
+    "reps": "5",
+    "weight": "555",
+    "caloriesBurned": "921",
+    "duration": "53",
+    "date": "2020-03-10"
+}
+
+###
+GET http://localhost:{{port}}/api/v1/workouts/644fbf248566d4a3e9f28b67
+
 
