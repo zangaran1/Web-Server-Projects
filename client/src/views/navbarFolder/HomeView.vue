@@ -24,9 +24,15 @@ const session = useSession();
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
+    <div class="section-2" v-else>
+        <div class="container">
+            <h1>Welcome to Code Fitness</h1>
+            <h1>Please Log in</h1>
+        </div>
+    </div>
+    <footer>Work Done by Nicholas Zangara</footer>
 </template>
 
 <style scoped>
@@ -39,6 +45,24 @@ const session = useSession();
         height: 50px;
         border-radius: 16px 16px 0px 0px;
     }
-    
+    .section-2{
+        margin-top: 50px;
+        align-items: center;
+        justify-content: center;
+    }
+    .container{
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    h1{
+        color: white;
+        font-size: 5rem;
+    }
+    footer{
+        text-align: center;
+        color: white;
+        font-size: 1.5rem;
+    }
     
 </style>

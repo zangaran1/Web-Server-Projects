@@ -58,4 +58,16 @@ Content-Type: application/json
 ###
 GET http://localhost:{{port}}/api/v1/workouts/644fbf248566d4a3e9f28b67
 
+###
+POST http://localhost:{{port}}/api/v1/journals
+Content-Type: application/json
+
+{
+    "owner": "nzangara",
+    "date": "2023-05-04",
+    "bodyWeight": 200,
+    "caloriesEaten": 15,
+    "entryContent": "I ate a lot of food today"
+}
+
 

@@ -1,12 +1,16 @@
 <script setup lang="ts">
     import { useSession} from '@/model/session';
     import data from '@/data/users.json';
+    import type { User } from '@/model/appUsers';
+    import { ref } from 'vue';
 
     import FriendsListView from '@/views/otherViews/FriendsListView.vue';
     import UserProfileView from '../views/otherViews/userProfileView.vue';
 
     const session = useSession();
     const users = data.users;
+    const friendsCount = session.user!.friends?.length;
+
 </script>
 
 <template>
@@ -21,17 +25,17 @@
             </div>
             <div class="user-credentials">
                 <div class="posts-box">
-                    <p>Total Posts: 0</p>
+                    <p>Total Posts: 3</p>
                 </div>  
                 <div class="total-workouts-box">
-                    <p>Total Workouts: 0</p>
+                    <p>Total Workouts: 3</p>
                 </div>
             
                 <div class="following-box">
-                    <p>Following: 0</p>
+                    <p>Following: {{ friendsCount }}</p>
                 </div>
                 <div class="followers-box">
-                    <p>Followers: 0</p>
+                    <p>Followers: {{ friendsCount }}</p>
                 </div>              
             </div>
         </div>    
