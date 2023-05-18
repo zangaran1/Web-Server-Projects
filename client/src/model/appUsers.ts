@@ -1,5 +1,5 @@
 import type { DataEnvelope, DataListEnvelope } from "./myFetch";
-import { api } from "./session";
+import { api, useSession } from "./session";
 
 export interface User {
     name: string;
@@ -31,5 +31,10 @@ export function createUser(user: User): Promise<DataEnvelope<User>> {
 }
 export function deleteItem(id: string): Promise<DataEnvelope<User>> {
     return api(`users/${id}`, {method: 'DELETE'})
+}
+export async function search(query: string) {
+    const session = useSession();
+    const results = await api(`users/search/${query}`)
+    return results.data
 }
 

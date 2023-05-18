@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { createWorkout, type Workout } from '@/model/workouts';
 import { useSession } from '@/model/session';
 import router from '@/router';
-
+import {getUsers, search, type User} from '@/model/appUsers';
 const session = useSession();
 
 const workoutName = ref('');
@@ -30,6 +30,63 @@ function newWorkout() {
     
     router.push('/workouts');
 }
+
+/*const users = ref<User[]>([]);
+    getUsers().then((data) => {
+      users.value = data.data;
+    });
+
+  let input = ref("");
+  function filteredListFocus() {
+    if (input.value.length > 0) {
+      return users.value.filter((userN) => {
+        return userN.name.toLowerCase().includes(input.value.toLowerCase());
+      }).map((userN) => {
+      return userN.name;
+      });
+    } else {
+      return [];
+    }
+  }
+*/
+
+  // user search users import from appUsers.ts
+    const users = ref<User[]>([]);
+    getUsers().then((data) => {
+      users.value = data.data;
+    });
+
+    let input = ref("");
+    function filteredListFocus() {
+      if (input.value.length > 0) {
+        return users.value.filter((userN) => {
+          return userN.name.toLowerCase().includes(input.value.toLowerCase());
+        }).map((userN) => {
+        return userN.name;
+        });
+      } else {
+        return [];
+      }
+    }
+
+    function searchUser() {
+      search(input.value).then((data) => {
+        users.value = data.data;
+      });
+    }
+
+    function selectUser(userN: string) {
+        input.value = userN;
+    }
+
+    function clearInput() {
+      input.value = "";
+    }
+    
+
+    
+    
+
 </script>
 
 <template>
@@ -69,6 +126,18 @@ function newWorkout() {
                             </div>
                         </div>
                         <div class="field">
+                            <label class="label">tag friends</label>
+                        
+                            <input class="input" type="text" v-model="input" />
+                            <div class="dropdown" v-if="session.user">
+                                <div class="item userN" v-for="userN in filteredListFocus()" :key="userN" @click="selectUser">
+                                    <p>{{ userN }}</p>
+                                    
+                                </div>
+                            </div>
+                    
+                        </div>
+                        <div class="field">
                             <label class="label">caloriesBurned</label>
                             <div class="control">
                             <input class="input" type="number" v-model="caloriesBurned" />
@@ -85,7 +154,7 @@ function newWorkout() {
                             <div class="control">
                             <input class="input" type="date" v-model="date" />
                             </div>
-                        </div> 
+                        </div>  
                         <div class="field">
                             <div class="control">
                             <button class="button is-link" @click="newWorkout">Submit</button>
@@ -101,5 +170,25 @@ function newWorkout() {
 </template>
 
 <style scoped>
-
+.dropdown{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  width: 350px;
+  margin: 0 auto;
+}
+.item {
+  color: black;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+.userN {
+  background-color: white;
+  cursor: pointer;
+}
+.error {
+  background-color: tomato;
+}
 </style>
